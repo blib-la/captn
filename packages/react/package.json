@@ -1,6 +1,6 @@
 {
   "name": "@captn/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "AGPL 3.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
@@ -35,8 +35,6 @@
     "watch": "tsc --watch --project tsconfig.production.json",
     "build": "tsc --project tsconfig.production.json",
     "clean": "npx rimraf dist"
-  },
-  "dependencies": {
   },
   "devDependencies": {
     "@types/react": "^18.2.61",

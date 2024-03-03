@@ -1,6 +1,6 @@
 {
   "name": "@captn/joy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "AGPL 3.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
@@ -37,8 +37,8 @@
     "clean": "npx rimraf dist"
   },
   "dependencies": {
-    "@captn/theme": "0.1.0",
-    "@captn/utils": "0.1.0"
+    "@captn/theme": "^0.1.1",
+    "@captn/utils": "^0.1.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.4",
