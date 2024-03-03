@@ -1,5 +1,6 @@
-import { Palette } from "@captn/theme/types";
 import { mixColors } from "@captn/utils/color";
+
+import { Palette } from "./types";
 
 export const palette: Palette = {
 	grey: {
