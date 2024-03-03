@@ -63,7 +63,7 @@ import { SDKMessage } from "./types";
  *   is beneficial for effective use and handling potential edge cases or errors.
  */
 
-export default function useSDK<T, R>(
+export function useSDK<T, R>(
 	appId: string,
 	{
 		onMessage,

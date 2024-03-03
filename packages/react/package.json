@@ -1,7 +1,6 @@
 {
   "name": "@captn/react",
   "version": "0.1.1",
-  "license": "AGPL 3.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
@@ -10,6 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/blib-la/captn.git"
   },
+  "license": "AGPL 3.0",
   "author": {
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
@@ -23,18 +23,22 @@
       "types": "./dist/types.d.ts",
       "default": "./dist/types.js"
     },
-    "./useSDK": {
-      "types": "./dist/useSDK.d.ts",
-      "default": "./dist/useSDK.js"
+    "./use-sdk": {
+      "types": "./dist/use-sdk.d.ts",
+      "default": "./dist/use-sdk.js"
+    },
+    "./custom-scrollbars": {
+      "types": "./dist/custom-scrollbars/index.d.ts",
+      "default": "./dist/custom-scrollbars/index.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "watch": "tsc --watch --project tsconfig.production.json",
     "build": "tsc --project tsconfig.production.json",
-    "clean": "npx rimraf dist"
+    "clean": "npx rimraf dist",
+    "watch": "tsc --watch --project tsconfig.production.json"
   },
   "devDependencies": {
     "@types/react": "^18.2.61",

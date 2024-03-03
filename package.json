@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "",
+  "keywords": [],
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
@@ -11,7 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/blib-la/captn.git"
   },
-  "keywords": [],
   "license": "AGPL 3.0",
   "author": {
     "name": "Gregor Adams",
@@ -24,7 +24,6 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npx lerna run build",
-    "build:next": "next build",
     "clean": "npx lerna run clean",
     "lint": "eslint packages/**/*.ts",
     "ncu": "npx npm-check-updates --deep",
@@ -35,7 +34,7 @@
     "release": "lerna publish --conventional-commits",
     "prerelease:beta": "npm run build",
     "release:beta": "lerna publish --canary --preid beta --pre-dist-tag beta",
-    "start:next": "next start",
+    "spj": "npx sort-package-json@latest \"package.json\" \"packages/*/package.json\"",
     "test": "jest",
     "watch": "npx lerna run watch --parallel"
   },
@@ -43,6 +42,8 @@
     "@jest/globals": "^29.7.0",
     "@swc/core": "^1.4.2",
     "@swc/jest": "^0.2.36",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^18.19.21",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
@@ -58,6 +59,8 @@
     "eslint-plugin-unused-imports": "^3.1.0",
     "jest": "^29.7.0",
     "jest-config": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-mock-extended": "^3.0.5",
     "jest-ts-webcompat-resolver": "^1.0.0",
     "lerna": "^8.1.2",
     "markdown-toc": "^1.2.0",

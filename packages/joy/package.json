@@ -1,7 +1,6 @@
 {
   "name": "@captn/joy",
   "version": "0.1.1",
-  "license": "AGPL 3.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
@@ -10,6 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/blib-la/captn.git"
   },
+  "license": "AGPL 3.0",
   "author": {
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
@@ -26,28 +26,34 @@
     "./title-bar": {
       "types": "./dist/title-bar/index.d.ts",
       "default": "./dist/title-bar/index.js"
+    },
+    "./app-frame": {
+      "types": "./dist/app-frame/index.d.ts",
+      "default": "./dist/app-frame/index.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "watch": "tsc --watch --project tsconfig.production.json",
     "build": "tsc --project tsconfig.production.json",
-    "clean": "npx rimraf dist"
+    "clean": "npx rimraf dist",
+    "watch": "tsc --watch --project tsconfig.production.json"
   },
   "dependencies": {
     "@captn/theme": "^0.1.1",
-    "@captn/utils": "^0.1.1"
-  },
-  "devDependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
+    "@captn/utils": "^0.1.1",
     "@mui/base": "5.0.0-beta.37",
     "@mui/icons-material": "5.15.11",
     "@mui/joy": "5.0.0-beta.29",
     "@mui/material": "5.15.11",
+    "react-custom-scrollbars": "^4.2.1"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
     "@types/react": "^18.2.61",
+    "@types/react-custom-scrollbars": "^4.0.13",
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

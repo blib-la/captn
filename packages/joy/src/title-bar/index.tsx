@@ -13,7 +13,7 @@ export function minimize() {
 }
 
 export function maximize() {
-	window.ipc.send("WINDOW:maxinmize");
+	window.ipc.send("WINDOW:maximize");
 }
 
 export function close() {
