@@ -24,8 +24,8 @@
       "default": "./dist/types.js"
     },
     "./use-sdk": {
-      "types": "./dist/use-sdk.d.ts",
-      "default": "./dist/use-sdk.js"
+      "types": "./dist/use-sdk/index.d.ts",
+      "default": "./dist/use-sdk/index.js"
     },
     "./custom-scrollbars": {
       "types": "./dist/custom-scrollbars/index.d.ts",

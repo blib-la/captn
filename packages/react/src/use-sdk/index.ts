@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 
-import { SDKMessage } from "./types";
+import { SDKMessage } from "../types";
 
 /**
  * Provides a React hook for establishing and managing Inter-Process Communication (IPC)
