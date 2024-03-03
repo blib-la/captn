@@ -23,6 +23,10 @@
       "types": "./dist/theme/index.d.ts",
       "default": "./dist/theme/index.js"
     },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    },
     "./title-bar": {
       "types": "./dist/title-bar/index.d.ts",
       "default": "./dist/title-bar/index.js"
