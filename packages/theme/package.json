@@ -1,0 +1,63 @@
+{
+  "name": "@captn/theme",
+  "version": "0.1.0",
+  "license": "AGPL 3.0",
+  "homepage": "https://github.com/blib-la/captn/",
+  "bugs": {
+    "url": "https://github.com/blib-la/captn/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blib-la/captn.git"
+  },
+  "author": {
+    "name": "Gregor Adams",
+    "email": "greg@pixelass.com"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    },
+    "./palette": {
+      "types": "./dist/palette.d.ts",
+      "default": "./dist/palette.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "watch": "tsc --watch --project tsconfig.production.json",
+    "build": "tsc --project tsconfig.production.json",
+    "clean": "npx rimraf dist"
+  },
+  "dependencies": {
+    "@captn/utils": "0.1.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/base": "5.0.0-beta.37",
+    "@mui/icons-material": "5.15.11",
+    "@mui/joy": "5.0.0-beta.29",
+    "@mui/material": "5.15.11",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.11.3",
+    "@emotion/styled": ">=11",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

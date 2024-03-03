@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "alwaysStrict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": false,
+    "target": "ES2022",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@captn/joy/*": [
+        "./packages/joy/src/*"
+      ],
+      "@captn/react/*": [
+        "./packages/react/src/*"
+      ],
+      "@captn/theme/*": [
+        "./packages/theme/src/*"
+      ],
+      "@captn/utils/*": [
+        "./packages/utils/src/*"
+      ]
+    },
+    "incremental": true
+  },
+  "include": [
+    "**/*.d.ts",
+    "**/*.tsx",
+    "**/*.ts",
+    "*.d.ts",
+    "*.tsx",
+    "*.ts"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "node_modules"
+  ]
+}
