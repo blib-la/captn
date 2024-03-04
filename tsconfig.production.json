@@ -11,8 +11,8 @@
       "ES2022",
       "dom"
     ],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
