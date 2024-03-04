@@ -40,6 +40,9 @@
     "clean": "npx rimraf dist",
     "watch": "tsc --watch --project tsconfig.production.json"
   },
+  "dependencies": {
+    "@captn/utils": "^0.1.2"
+  },
   "devDependencies": {
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",

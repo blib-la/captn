@@ -22,6 +22,10 @@
     "./color": {
       "types": "./dist/color.d.ts",
       "default": "./dist/color.js"
+    },
+    "./constants": {
+      "types": "./dist/constants.d.ts",
+      "default": "./dist/constants.js"
     }
   },
   "files": [

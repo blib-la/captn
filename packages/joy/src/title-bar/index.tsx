@@ -1,3 +1,4 @@
+import { WINDOW_CLOSE_KEY, WINDOW_MAXIMIZE_KEY, WINDOW_MINIMIZE_KEY } from "@captn/utils/constants";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CloseIcon from "@mui/icons-material/Close";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -9,15 +10,15 @@ import Typography from "@mui/joy/Typography";
 import type { ReactNode } from "react";
 
 export function minimize() {
-	window.ipc.send("WINDOW:minimize");
+	window.ipc.send(WINDOW_MINIMIZE_KEY);
 }
 
 export function maximize() {
-	window.ipc.send("WINDOW:maximize");
+	window.ipc.send(WINDOW_MAXIMIZE_KEY);
 }
 
 export function close() {
-	window.ipc.send("WINDOW:close");
+	window.ipc.send(WINDOW_CLOSE_KEY);
 }
 
 export function WindowControls({
@@ -79,9 +80,8 @@ export function TitleBar({
 			variant={variant}
 			sx={{
 				display: "flex",
-				gridColumnStart: 1,
-				gridColumnEnd: 3,
 				WebkitAppRegion: "drag",
+				alignContent: "center",
 				alignItems: "center",
 			}}
 		>

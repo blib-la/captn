@@ -1,3 +1,4 @@
+import { APP_MESSAGE_KEY } from "@captn/utils/constants";
 import { useCallback, useEffect, useRef } from "react";
 
 import { SDKMessage } from "../types";
@@ -73,12 +74,12 @@ export function useSDK<T, R>(
 	const onMessageReference = useRef(onMessage);
 	const onErrorReference = useRef(onError);
 
-	const channel = `${appId}:APP:message`;
+	const channel = `${appId}:${APP_MESSAGE_KEY}`;
 
 	const send = useCallback(
 		(message: SDKMessage<T>) => {
 			try {
-				window.ipc.send("APP:message", { message, appId });
+				window.ipc.send(APP_MESSAGE_KEY, { message, appId });
 			} catch (error) {
 				if (onErrorReference.current && error instanceof Error) {
 					onErrorReference.current(error);
