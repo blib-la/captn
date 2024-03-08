@@ -117,10 +117,17 @@ export function useSDK<T, R>(
 		[appId]
 	);
 
-	const getFilePath = useCallback(window.ipc.getFilePath, []);
-	const getDirectoryPath = useCallback(window.ipc.getDirectoryPath, []);
-	const readFile = useCallback(window.ipc.readFile, []);
-	const writeFile = useCallback(window.ipc.writeFile, []);
+	const getFilePath = useCallback(() => window.ipc.getFilePath(), []);
+	const getDirectoryPath = useCallback(() => window.ipc.getDirectoryPath(), []);
+	const readFile = useCallback(
+		(name: string, encoding?: BufferEncoding) => window.ipc.readFile(name, encoding),
+		[]
+	);
+	const writeFile = useCallback(
+		(name: string, content: string, options: { encoding?: BufferEncoding }) =>
+			window.ipc.writeFile(name, content, options),
+		[]
+	);
 
 	useEffect(() => {
 		onMessageReference.current = onMessage;
