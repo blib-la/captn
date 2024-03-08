@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/blib-la/captn/compare/v0.2.1...v0.3.0) (2024-03-08)
+
+
+### Features
+
+* extend ipc ([#2](https://github.com/blib-la/captn/issues/2)) ([3d40e32](https://github.com/blib-la/captn/commit/3d40e32fed46544a3836476525f1f9e8006c2f9c))
+
+
+
+
+
 ## [0.2.1](https://github.com/blib-la/captn/compare/v0.2.0...v0.2.1) (2024-03-04)
 
 **Note:** Version bump only for package @captn/react
