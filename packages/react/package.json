@@ -41,10 +41,12 @@
     "watch": "tsc --watch --project tsconfig.production.json"
   },
   "dependencies": {
-    "@captn/utils": "^0.2.1"
+    "@captn/utils": "^0.2.1",
+    "react-custom-scrollbars": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.61",
+    "@types/react-custom-scrollbars": "^4.0.13",
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

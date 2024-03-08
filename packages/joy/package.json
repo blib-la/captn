@@ -49,20 +49,17 @@
     "watch": "tsc --watch --project tsconfig.production.json"
   },
   "dependencies": {
-    "@captn/react": "^0.2.1",
     "@captn/theme": "^0.2.1",
     "@captn/utils": "^0.2.1",
     "@mui/base": "5.0.0-beta.37",
     "@mui/icons-material": "5.15.11",
-    "@mui/joy": "5.0.0-beta.29",
-    "@mui/material": "5.15.11",
-    "react-custom-scrollbars": "^4.2.1"
+    "@mui/material": "5.15.11"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@mui/joy": "5.0.0-beta.29",
     "@types/react": "^18.2.61",
-    "@types/react-custom-scrollbars": "^4.0.13",
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -70,6 +67,7 @@
   "peerDependencies": {
     "@emotion/react": ">=11.11.3",
     "@emotion/styled": ">=11",
+    "@mui/joy": ">=5.0.0-beta.29",
     "react": ">=18",
     "react-dom": ">=18"
   },
