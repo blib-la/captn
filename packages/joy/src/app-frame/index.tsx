@@ -1,4 +1,3 @@
-import { CustomScrollbars } from "@captn/react/custom-scrollbars";
 import Box from "@mui/joy/Box";
 import Sheet, { SheetProps } from "@mui/joy/Sheet";
 import { ReactNode } from "react";
@@ -27,9 +26,7 @@ export function AppFrame({
 			}}
 		>
 			{titleBar}
-			<Box sx={{ flex: 1, position: "relative" }}>
-				<CustomScrollbars>{children}</CustomScrollbars>
-			</Box>
+			<Box sx={{ flex: 1, position: "relative" }}>{children}</Box>
 		</Sheet>
 	);
 }
