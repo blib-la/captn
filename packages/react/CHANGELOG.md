@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/blib-la/captn/compare/v0.3.0...v0.3.1) (2024-03-08)
+
+
+### Bug Fixes
+
+* window is not defined in useSDK ([fdf84fa](https://github.com/blib-la/captn/commit/fdf84fa24689187fff8250ef1b2a0bd8f82865b1))
+
+
+
+
+
 # [0.3.0](https://github.com/blib-la/captn/compare/v0.2.1...v0.3.0) (2024-03-08)
 
 
