@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/blib-la/captn/compare/v0.4.0...v0.4.1) (2024-03-11)
+
+
+### Bug Fixes
+
+* exports of actions ([267dbfc](https://github.com/blib-la/captn/commit/267dbfcd500dcdf1e17843afaebc52ddb86e8a5c))
+
+
+
+
+
 # [0.4.0](https://github.com/blib-la/captn/compare/v0.3.1...v0.4.0) (2024-03-11)
 
 
