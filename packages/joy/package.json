@@ -9,56 +9,70 @@
     "type": "git",
     "url": "git+https://github.com/blib-la/captn.git"
   },
-  "license": "AGPL 3.0",
+  "license": "AGPL-3.0-or-later",
   "author": {
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "index": "./dist/esm/index.js"
+    },
+    "./custom-scrollbars": {
+      "types": "./dist/types/custom-scrollbars/index.d.ts",
+      "require": "./dist/cjs/custom-scrollbars/index.js",
+      "import": "./dist/esm/custom-scrollbars/index.js"
     },
     "./theme": {
-      "types": "./dist/theme/index.d.ts",
-      "default": "./dist/theme/index.js"
+      "types": "./dist/types/theme/index.d.ts",
+      "require": "./dist/cjs/theme/index.js",
+      "index": "./dist/esm/theme/index.js"
     },
     "./types": {
-      "types": "./dist/types.d.ts",
-      "default": "./dist/types.js"
+      "types": "./dist/types/types.d.ts"
     },
     "./styles": {
-      "types": "./dist/styles/index.d.ts",
-      "default": "./dist/styles/index.js"
+      "types": "./dist/types/styles/index.d.ts",
+      "require": "./dist/cjs/styles/index.js",
+      "index": "./dist/esm/styles/index.js"
     },
     "./title-bar": {
-      "types": "./dist/title-bar/index.d.ts",
-      "default": "./dist/title-bar/index.js"
+      "types": "./dist/types/title-bar/index.d.ts",
+      "require": "./dist/cjs/title-bar/index.js",
+      "index": "./dist/esm/title-bar/index.js"
     },
     "./app-frame": {
-      "types": "./dist/app-frame/index.d.ts",
-      "default": "./dist/app-frame/index.js"
+      "types": "./dist/types/app-frame/index.d.ts",
+      "require": "./dist/cjs/app-frame/index.js",
+      "index": "./dist/esm/app-frame/index.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.production.json",
+    "build": "npx npm-run-all --parallel build:*",
+    "build:cjs": "tsc --project tsconfig.production.cjs.json",
+    "build:esm": "tsc --project tsconfig.production.esm.json",
+    "build:types": "tsc --project tsconfig.production.types.json",
     "clean": "npx rimraf dist",
-    "watch": "tsc --watch --project tsconfig.production.json"
+    "watch": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
     "@captn/theme": "^0.3.0",
     "@captn/utils": "^0.3.0",
     "@mui/base": "5.0.0-beta.37",
     "@mui/icons-material": "5.15.11",
-    "@mui/material": "5.15.11"
+    "@mui/material": "5.15.11",
+    "react-custom-scrollbars": "^4.2.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@mui/joy": "5.0.0-beta.29",
+    "@types/react-custom-scrollbars": "^4.0.13",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",

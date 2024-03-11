@@ -13,6 +13,7 @@
     ],
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "target": "ES2022",
     "resolveJsonModule": true,
     "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
@@ -20,9 +21,22 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": false,
-    "target": "ES2022",
     "typeRoots": ["node_modules/@types"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@captn/joy/*": [
+        "./packages/joy/src/*"
+      ],
+      "@captn/react/*": [
+        "./packages/react/src/*"
+      ],
+      "@captn/theme/*": [
+        "./packages/theme/src/*"
+      ],
+      "@captn/utils/*": [
+        "./packages/utils/src/*"
+      ]
+    }
   },
   "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["/**/node_modules", "/node_modules"]

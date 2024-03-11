@@ -9,44 +9,47 @@
     "type": "git",
     "url": "git+https://github.com/blib-la/captn.git"
   },
-  "license": "AGPL 3.0",
+  "license": "AGPL-3.0-or-later",
   "author": {
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
     },
     "./types": {
-      "types": "./dist/types.d.ts",
-      "default": "./dist/types.js"
+      "types": "./dist/types/types.d.ts"
     },
     "./use-sdk": {
-      "types": "./dist/use-sdk/index.d.ts",
-      "default": "./dist/use-sdk/index.js"
+      "types": "./dist/types/use-sdk/index.d.ts",
+      "require": "./dist/cjs/use-sdk/index.js",
+      "import": "./dist/esm/use-sdk/index.js"
     },
-    "./custom-scrollbars": {
-      "types": "./dist/custom-scrollbars/index.d.ts",
-      "default": "./dist/custom-scrollbars/index.js"
+    "./use-captain-action": {
+      "types": "./dist/types/use-captain-action/index.d.ts",
+      "require": "./dist/cjs/use-captain-action/index.js",
+      "import": "./dist/esm/use-captain-action/index.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.production.json",
+    "build": "npx npm-run-all --parallel build:*",
+    "build:cjs": "tsc --project tsconfig.production.cjs.json",
+    "build:esm": "tsc --project tsconfig.production.esm.json",
+    "build:types": "tsc --project tsconfig.production.types.json",
     "clean": "npx rimraf dist",
-    "watch": "tsc --watch --project tsconfig.production.json"
+    "watch": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
-    "@captn/utils": "^0.3.0",
-    "react-custom-scrollbars": "^4.2.1"
+    "@captn/utils": "^0.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.61",
-    "@types/react-custom-scrollbars": "^4.0.13",
     "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

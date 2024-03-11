@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.production.json",
+  "compilerOptions": {
+    "declarationDir": "./dist/types",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "baseUrl": ".",
+    "paths": {
+      "@captn/utils/*": [
+        "../utils/dist/types/*"
+      ]
+    }
+  },
+  "include": ["src", "**/*.d.ts"],
+  "exclude": ["**/__tests__/**/*"]
+}

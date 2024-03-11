@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.production.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2022",
+    "outDir": "./dist/cjs",
+    "declaration": false,
+    "baseUrl": ".",
+    "paths": {
+      "@captn/utils/*": [
+        "../utils/dist/types/*"
+      ]
+    }
+  },
+  "exclude": ["**/__tests__/**/*"],
+  "include": ["src", "**/*.d.ts"]
+}

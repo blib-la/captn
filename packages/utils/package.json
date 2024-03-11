@@ -9,36 +9,51 @@
     "type": "git",
     "url": "git+https://github.com/blib-la/captn.git"
   },
-  "license": "AGPL 3.0",
+  "license": "AGPL-3.0-or-later",
   "author": {
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
     },
     "./color": {
-      "types": "./dist/color.d.ts",
-      "default": "./dist/color.js"
+      "import": "./dist/esm/color.js",
+      "require": "./dist/cjs/color.js",
+      "types": "./dist/types/color.d.ts"
+    },
+    "./string": {
+      "import": "./dist/esm/string.js",
+      "require": "./dist/cjs/string.js",
+      "types": "./dist/types/string.d.ts"
+    },
+    "./action": {
+      "import": "./dist/esm/action.js",
+      "require": "./dist/cjs/action.js",
+      "types": "./dist/types/action.d.ts"
     },
     "./constants": {
-      "types": "./dist/constants.d.ts",
-      "default": "./dist/constants.js"
+      "import": "./dist/esm/constants.js",
+      "require": "./dist/cjs/constants.js",
+      "types": "./dist/types/constants.d.ts"
     },
     "./types": {
-      "types": "./dist/types.d.ts",
-      "default": "./dist/types.js"
+      "types": "./dist/types/types.d.ts"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.production.json",
+    "build": "npx npm-run-all --parallel build:*",
+    "build:cjs": "tsc --project tsconfig.production.cjs.json",
+    "build:esm": "tsc --project tsconfig.production.esm.json",
+    "build:types": "tsc --project tsconfig.production.types.json",
     "clean": "npx rimraf dist",
-    "watch": "tsc --watch --project tsconfig.production.json"
+    "watch": "tsc --watch --project tsconfig.production.types.json"
   },
   "publishConfig": {
     "access": "public"

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.production.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ES2022",
+    "outDir": "./dist/esm",
+    "declaration": false
+  },
+  "exclude": ["**/__tests__/**/*"],
+  "include": ["src", "**/*.d.ts"]
+}

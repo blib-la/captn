@@ -1,7 +1,15 @@
 import Box from "@mui/joy/Box";
+import { styled } from "@mui/joy/styles";
 import { CSSProperties, forwardRef, ReactNode } from "react";
 import { Scrollbars } from "react-custom-scrollbars";
 
+const StyledScrollbars = styled(Scrollbars)({
+	overflow: "hidden",
+	"&::-webkit-scrollbar": {
+		width: 0,
+		height: 0,
+	},
+});
 export const CustomScrollbars = forwardRef<
 	Scrollbars,
 	{
@@ -9,11 +17,11 @@ export const CustomScrollbars = forwardRef<
 		children?: ReactNode;
 	}
 >(({ style, children }, ref) => (
-	<Scrollbars
+	<StyledScrollbars
 		ref={ref}
 		autoHide
 		universal
-		style={{ ...style, overflow: "hidden" }}
+		style={{ ...style }}
 		renderThumbVertical={properties => (
 			<Box
 				{...properties}
@@ -26,5 +34,5 @@ export const CustomScrollbars = forwardRef<
 		)}
 	>
 		{children}
-	</Scrollbars>
+	</StyledScrollbars>
 ));
