@@ -30,10 +30,10 @@
       "require": "./dist/cjs/string.js",
       "types": "./dist/types/string.d.ts"
     },
-    "./action": {
-      "import": "./dist/esm/action.js",
-      "require": "./dist/cjs/action.js",
-      "types": "./dist/types/action.d.ts"
+    "./actions": {
+      "import": "./dist/esm/actions.js",
+      "require": "./dist/cjs/actions.js",
+      "types": "./dist/types/actions.d.ts"
     },
     "./constants": {
       "import": "./dist/esm/constants.js",
