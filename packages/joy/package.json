@@ -28,7 +28,7 @@
     "./theme": {
       "types": "./dist/types/theme/index.d.ts",
       "require": "./dist/cjs/theme/index.js",
-      "index": "./dist/esm/theme/index.js"
+      "import": "./dist/esm/theme/index.js"
     },
     "./types": {
       "types": "./dist/types/types.d.ts"
@@ -36,17 +36,17 @@
     "./styles": {
       "types": "./dist/types/styles/index.d.ts",
       "require": "./dist/cjs/styles/index.js",
-      "index": "./dist/esm/styles/index.js"
+      "import": "./dist/esm/styles/index.js"
     },
     "./title-bar": {
       "types": "./dist/types/title-bar/index.d.ts",
       "require": "./dist/cjs/title-bar/index.js",
-      "index": "./dist/esm/title-bar/index.js"
+      "import": "./dist/esm/title-bar/index.js"
     },
     "./app-frame": {
       "types": "./dist/types/app-frame/index.d.ts",
       "require": "./dist/cjs/app-frame/index.js",
-      "index": "./dist/esm/app-frame/index.js"
+      "import": "./dist/esm/app-frame/index.js"
     }
   },
   "files": [
