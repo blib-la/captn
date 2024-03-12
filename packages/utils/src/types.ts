@@ -37,7 +37,7 @@ export interface IPCHandlers {
 		name: string,
 		content: string,
 		options: { encoding?: BufferEncoding }
-	): Promise<string>;
+	): Promise<{ filePath: string; fileType: string }>;
 
 	/**
 	 * Reads the content from a file specified by name.
