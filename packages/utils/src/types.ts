@@ -49,6 +49,21 @@ export interface IPCHandlers {
 	readFile(name: string, encoding?: BufferEncoding): Promise<string>;
 
 	/**
+	 * Copies a file from a source path to a destination path. If the destination file exists, it will be overwritten.
+	 *
+	 * @param source - The name or path of the source file to copy from.
+	 * @param destination - The name or path of the destination file to copy to.
+	 * @returns A Promise that resolves when the file has been successfully copied. The promise does not resolve to any value.
+	 *
+	 * @example
+	 * // Copy a file from 'path/to/source.txt' to 'path/to/destination.txt'
+	 * copyFile('path/to/source.txt', 'path/to/destination.txt')
+	 *   .then(() => console.log('File copied successfully'))
+	 *   .catch(error => console.error('Error copying file:', error));
+	 */
+	copyFile(source: string, destination: string): Promise<void>;
+
+	/**
 	 * Retrieves the path to the directory selected by the user.
 	 *
 	 * @returns A Promise that resolves to the path of the selected directory.
