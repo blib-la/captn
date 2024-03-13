@@ -1,4 +1,6 @@
-import { getActionArguments } from "../string";
+import { LOCAL_PROTOCOL } from "@captn/utils/constants";
+
+import { getActionArguments, localFile } from "../string";
 
 describe("getActionArguments", () => {
 	it("parses command and captainId", () => {
@@ -44,5 +46,29 @@ describe("getActionArguments", () => {
 			value: "this app is amazing",
 			options: "submit|urgent",
 		});
+	});
+});
+
+describe("localFile", () => {
+	const defaultProtocol = LOCAL_PROTOCOL;
+	const customProtocol = "customProtocol";
+	const absoluteFilePath = "C:/Users/example/path/to/myFile.txt";
+
+	it("should construct a URI with the default protocol when no protocol is provided", () => {
+		const expectedUri = `${defaultProtocol}://${absoluteFilePath}`;
+		const uri = localFile(absoluteFilePath, {});
+		expect(uri).toBe(expectedUri);
+	});
+
+	it("should construct a URI with a custom protocol when one is provided", () => {
+		const expectedUri = `${customProtocol}://${absoluteFilePath}`;
+		const uri = localFile(absoluteFilePath, { localProtocol: customProtocol });
+		expect(uri).toBe(expectedUri);
+	});
+
+	it("should construct a URI with the default protocol when options are not provided", () => {
+		const expectedUri = `${defaultProtocol}://${absoluteFilePath}`;
+		const uri = localFile(absoluteFilePath);
+		expect(uri).toBe(expectedUri);
 	});
 });

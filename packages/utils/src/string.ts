@@ -1,3 +1,5 @@
+import { LOCAL_PROTOCOL } from "./constants";
+
 /**
  * Parses a given action string into its constituent components: command, captainId, value, and options.
  *
@@ -54,4 +56,35 @@ export function getActionArguments(action: string) {
 	}
 
 	return { command, captainId, value, options } as const;
+}
+
+/**
+ * Constructs a URI for a local file using a specified protocol, based on the absolute path of the file on the disk.
+ * This function facilitates the creation of URIs that adhere to specific protocol schemes for accessing files
+ * directly from the file system.
+ *
+ * @param filePath - The absolute path to the file on the disk. This should include the full path from the root
+ *                   directory of the file system to the file itself, ensuring precise location for URI construction.
+ * @param options - An optional object to specify additional settings:
+ *  - `localProtocol`: The protocol scheme to use for the URI. This defines the method of access for the file.
+ *                     Commonly used protocols include 'file', but custom protocols can be specified to suit
+ *                     particular needs or applications. If not specified, defaults to a predefined `LOCAL_PROTOCOL`
+ *                     variable.
+ * @returns A string representing the URI constructed with the specified local protocol and the absolute file path.
+ *
+ * @example
+ * // Generate a URI for a file with default protocol, assuming LOCAL_PROTOCOL is 'file'
+ * console.log(localFile('/Users/example/path/to/myFile.txt'));
+ * // Output: 'file:///Users/example/path/to/myFile.txt'
+ *
+ * @example
+ * // Generate a URI for a file with a custom protocol
+ * console.log(localFile('/Users/example/path/to/myFile.txt', { localProtocol: 'customProtocol' }));
+ * // Output: 'customProtocol:///Users/example/path/to/myFile.txt'
+ */
+export function localFile(
+	filePath: string,
+	{ localProtocol = LOCAL_PROTOCOL }: { localProtocol?: string } = {}
+) {
+	return `${localProtocol}://${filePath}`;
 }
