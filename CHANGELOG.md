@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/blib-la/captn/compare/v0.5.0...v0.6.0) (2024-03-13)
+
+
+### Features
+
+* add localFile helper ([ef0077a](https://github.com/blib-la/captn/commit/ef0077ace7cd72a199b187e5131db0238f072e21))
+* add type ([d07a2cb](https://github.com/blib-la/captn/commit/d07a2cbae20fa9e2bec0de96dfc44c985531da45))
+
+
+
+
+
 # [0.5.0](https://github.com/blib-la/captn/compare/v0.4.2...v0.5.0) (2024-03-12)
 
 
