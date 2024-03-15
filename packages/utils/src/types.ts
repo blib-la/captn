@@ -24,6 +24,26 @@ export interface IPCHandlers {
 		 */
 		get<T>(key: string, defaultValue?: T): Promise<T>;
 	};
+	downloadStore: {
+		/**
+		 * Retrieves a value of type T from the download store identified by a unique key.
+		 * If the key is not found, an optional default value may be returned instead.
+		 * This method returns a promise that resolves to the value associated with the key
+		 * or the default value.
+		 *
+		 * @template T - The expected type of the value associated with the key.
+		 * @param {string} key - The unique key identifying the value to retrieve.
+		 * @param {T} [defaultValue] - An optional default value to return if the key is not found.
+		 * @returns {Promise<T>} - A promise that resolves with the retrieved value or the default value.
+		 *
+		 * @example
+		 * // Retrieve a download status, with a default value of IDLE if not found
+		 * downloadStore.get<string>('https://huggingface.co/Blib-la/sd-turbo-fp16', 'IDLE').then((status) => {
+		 *   console.log(status);
+		 * });
+		 */
+		get<T>(key: string, defaultValue?: T): Promise<T>;
+	};
 	/**
 	 * Writes content to a file specified by name. If the file does not exist, it will be created.
 	 *
