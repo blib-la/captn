@@ -84,6 +84,35 @@ export interface IPCHandlers {
 	copyFile(source: string, destination: string): Promise<void>;
 
 	/**
+	 * Initiates the download of one or more files based on the provided data array.
+	 * Each object in the array represents a download task with its own source, destination,
+	 * and other optional parameters. The method processes these tasks to initiate downloads,
+	 * potentially unzipping the files upon completion if specified.
+	 *
+	 * This updated interface and method reflect the capability to handle multiple downloads,
+	 * where each task is defined by its source URL, destination path, unique identifier,
+	 * and an optional unzip flag. It's designed to support bulk operations,
+	 * allowing for efficient management of multiple file downloads with individual tracking and processing.
+	 *
+	 * @param {Object[]} data - An array of objects, where each object contains:
+	 *   @property {string} source - The URL from which the file will be downloaded.
+	 *   @property {string} destination - The local file system path where the downloaded file will be saved.
+	 *   @property {string} id - A unique identifier for the download task. This is used to track the download's progress and status.
+	 *   @property {boolean} [unzip=false] - Optional. Indicates whether the downloaded file should be automatically unzipped after download.
+	 * @returns {Promise<void>} A promise that resolves when all download tasks have been processed, either successfully or with errors.
+	 */
+	downloadFiles(
+		data: {
+			label: string;
+			id: string;
+			appId: string;
+			source: string;
+			destination: string;
+			unzip?: boolean;
+		}[]
+	): Promise<void>;
+
+	/**
 	 * Retrieves the path to the directory selected by the user.
 	 *
 	 * @returns A Promise that resolves to the path of the selected directory.
