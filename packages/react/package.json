@@ -33,10 +33,10 @@
       "require": "./dist/cjs/use-captain-action/index.js",
       "import": "./dist/esm/use-captain-action/index.js"
     },
-    "./use-require-dowwnloads": {
-      "types": "./dist/types/use-require-dowwnloads/index.d.ts",
-      "require": "./dist/cjs/use-require-dowwnloads/index.js",
-      "import": "./dist/esm/use-require-dowwnloads/index.js"
+    "./use-required-dowwnloads": {
+      "types": "./dist/types/use-required-dowwnloads/index.d.ts",
+      "require": "./dist/cjs/use-required-dowwnloads/index.js",
+      "import": "./dist/esm/use-required-dowwnloads/index.js"
     }
   },
   "files": [
