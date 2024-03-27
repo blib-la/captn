@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/blib-la/captn/compare/v0.10.1...v0.10.2) (2024-03-27)
+
+
+### Bug Fixes
+
+* **react:** adjust export ([3a47cea](https://github.com/blib-la/captn/commit/3a47cea7501d9201aeeee49dcc1bce90e4b3861c))
+
+
+
+
+
 ## [0.10.1](https://github.com/blib-la/captn/compare/v0.10.0...v0.10.1) (2024-03-27)
 
 
