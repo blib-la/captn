@@ -32,6 +32,11 @@
       "types": "./dist/types/use-captain-action/index.d.ts",
       "require": "./dist/cjs/use-captain-action/index.js",
       "import": "./dist/esm/use-captain-action/index.js"
+    },
+    "./use-require-dowwnloads": {
+      "types": "./dist/types/use-require-dowwnloads/index.d.ts",
+      "require": "./dist/cjs/use-require-dowwnloads/index.js",
+      "import": "./dist/esm/use-require-dowwnloads/index.js"
     }
   },
   "files": [
@@ -49,7 +54,8 @@
     "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
-    "@captn/utils": "^0.9.0"
+    "@captn/utils": "^0.9.0",
+    "dot-prop": "^8.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.61",

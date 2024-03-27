@@ -1,3 +1,6 @@
+import { DownloadItem } from "@captn/utils/constants";
+import { Except } from "type-fest";
+
 /**
  * Interface defining the methods available for Inter-Process Communication (IPC) handlers.
  * These methods facilitate file operations, message sending, and event handling between
@@ -157,3 +160,5 @@ declare global {
 		ipc: IPCHandlers;
 	}
 }
+
+export type RequiredDownload = Except<DownloadItem, "createdAt">;

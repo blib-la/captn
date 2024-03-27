@@ -39,7 +39,7 @@ const config: Config = {
 		},
 	},
 	testEnvironment: "jsdom",
-	transformIgnorePatterns: ["/node_modules/"],
+	transformIgnorePatterns: ["/node_modules/(?!dot-prop).+\\.js$"],
 	extensionsToTreatAsEsm: [".ts", ".tsx"],
 };
 
