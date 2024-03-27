@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/blib-la/captn/compare/v0.8.0...v0.9.0) (2024-03-27)
+
+
+### Features
+
+* **utils:** add constants ([f0d6276](https://github.com/blib-la/captn/commit/f0d6276de1841793d03d1e30dd4ddb2c8e17f0c5))
+
+
+
+
+
 # [0.8.0](https://github.com/blib-la/captn/compare/v0.7.0...v0.8.0) (2024-03-18)
 
 
