@@ -8,13 +8,13 @@ describe("useRequiredDownloads", () => {
 		{
 			id: "download-1",
 			source: "https://example.com/file1.zip",
-			destination: "path/to/file1.zip",
+			destination: "path/to/a",
 			label: "File 1",
 		},
 		{
 			id: "download-2",
 			source: "https://example.com/file2.zip",
-			destination: "path/to/file2.zip",
+			destination: "path/to/b",
 			label: "File 2",
 		},
 	];
@@ -170,5 +170,32 @@ describe("useRequiredDownloads", () => {
 			// Assuming your hook updates `isCompleted` or similar state once it verifies the downloads exist
 			expect(result.current.isCompleted).toBe(true);
 		});
+	});
+
+	it("handles 'allInventory' event correctly", async () => {
+		const { result } = renderHook(() => useRequiredDownloads(requiredDownloads));
+
+		const inventoryData = {
+			path: {
+				to: {
+					a: [{ id: "download-1" }],
+					b: [{ id: "download-2" }],
+				},
+			},
+		};
+
+		const onCallback = (window.ipc.on as jest.Mock).mock.calls.find(
+			call => call[0] === "allInventory"
+		)?.[1];
+
+		if (onCallback && typeof onCallback === "function") {
+			act(() => {
+				onCallback(inventoryData);
+			});
+		} else {
+			console.error('Callback for "allInventory" not found or not a function');
+		}
+
+		await waitFor(() => expect(result.current.isCompleted).toBe(true));
 	});
 });
