@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/blib-la/captn/compare/v0.9.0...v0.10.0) (2024-03-27)
+
+
+### Features
+
+* add downloads hook ([2c33f7a](https://github.com/blib-la/captn/commit/2c33f7aa86a986432530308c720583d2a77fd446))
+
+
+
+
+
 # [0.9.0](https://github.com/blib-la/captn/compare/v0.8.0...v0.9.0) (2024-03-27)
 
 
