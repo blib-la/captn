@@ -38,7 +38,10 @@
     "build:esm": "tsc --project tsconfig.production.esm.json",
     "build:types": "tsc --project tsconfig.production.types.json",
     "clean": "npx rimraf dist",
-    "watch": "tsc --watch --project tsconfig.production.types.json"
+    "watch": "npx npm-run-all --parallel watch:*",
+    "watch:cjs": "tsc --watch --project tsconfig.production.cjs.json",
+    "watch:esm": "tsc --watch --project tsconfig.production.esm.json",
+    "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
     "@captn/utils": "^0.8.0"
