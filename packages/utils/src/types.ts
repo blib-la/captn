@@ -48,18 +48,21 @@ export interface IPCHandlers {
 		get<T>(key: string, defaultValue?: T): Promise<T>;
 	};
 	/**
-	 * Writes content to a file specified by name. If the file does not exist, it will be created.
+	 * Writes content to a file specified by name. If the file does not exist, it will be created. This function also
+	 * accepts a context parameter for storing text in a vector store, allowing for easier lookup of files based on content.
 	 *
 	 * @param name - The name or path of the file where content is to be written.
 	 * @param content - The content to write to the file.
 	 * @param options - Optional settings that configure the writing process. Includes:
 	 *  - `encoding`: The character encoding for the file. Defaults to 'utf-8'.
-	 * @returns A Promise that resolves to the path of the written file.
+	 * @param context - Optional string representing the context or metadata associated with the content, used for indexing in a vector store.
+	 * @returns A Promise that resolves to the path of the written file, along with the file type.
 	 */
 	writeFile(
 		name: string,
 		content: string,
-		options: { encoding?: BufferEncoding }
+		options: { encoding?: BufferEncoding },
+		context?: string
 	): Promise<{ filePath: string; fileType: string }>;
 
 	/**

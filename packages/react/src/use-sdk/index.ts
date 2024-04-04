@@ -124,8 +124,8 @@ export function useSDK<T, R>(
 		[]
 	);
 	const writeFile = useCallback(
-		(name: string, content: string, options: { encoding?: BufferEncoding }) =>
-			window.ipc.writeFile(name, content, options),
+		(name: string, content: string, options: { encoding?: BufferEncoding }, context?: string) =>
+			window.ipc.writeFile(name, content, options, context),
 		[]
 	);
 
