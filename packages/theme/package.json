@@ -1,6 +1,6 @@
 {
   "name": "@captn/theme",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
@@ -44,7 +44,7 @@
     "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
-    "@captn/utils": "^0.10.0"
+    "@captn/utils": "^0.11.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.4",

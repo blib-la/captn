@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/blib-la/captn/compare/v0.10.2...v0.11.0) (2024-04-04)
+
+
+### Features
+
+* add context to writeFile ([4ae3c8a](https://github.com/blib-la/captn/commit/4ae3c8a077bf28ec4e40fd88f78e41634410767d))
+
+
+
+
+
 ## [0.10.2](https://github.com/blib-la/captn/compare/v0.10.1...v0.10.2) (2024-03-27)
 
 
