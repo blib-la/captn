@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/blib-la/captn/compare/v0.11.0...v0.12.0) (2024-04-05)
+
+
+### Features
+
+* add vector store helpers ([0196112](https://github.com/blib-la/captn/commit/019611272ab032887db44e9ccaaaae924e33ea9c))
+
+
+
+
+
 # [0.11.0](https://github.com/blib-la/captn/compare/v0.10.2...v0.11.0) (2024-04-04)
 
 

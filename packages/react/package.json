@@ -1,6 +1,6 @@
 {
   "name": "@captn/react",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
@@ -64,15 +64,15 @@
     "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
-    "@captn/utils": "^0.11.0",
+    "@captn/utils": "^0.12.0",
     "dot-prop": "^8.0.2",
-    "use-debounce": "^10.0.0",
-    "lodash.isequal": "^4.5.0"
+    "lodash.isequal": "^4.5.0",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
+    "@types/lodash.isequal": "^4.5.8",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
-    "@types/lodash.isequal": "^4.5.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
