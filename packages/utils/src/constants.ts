@@ -10,6 +10,8 @@ export const USER_LANGUAGE_KEY = `${USER_KEY}:language`;
 export const USER_THEME_KEY = `${USER_KEY}:theme`;
 
 export const VECTOR_STORE_KEY = "VECTOR_STORE";
+export const VECTOR_STORE_SAVE_KEY = `${VECTOR_STORE_KEY}:save`;
+export const VECTOR_STORE_SAVED_KEY = `${VECTOR_STORE_KEY}:saved`;
 export const VECTOR_STORE_SEARCH_KEY = `${VECTOR_STORE_KEY}:search`;
 export const VECTOR_STORE_SCROLL_KEY = `${VECTOR_STORE_KEY}:scroll`;
 export const VECTOR_STORE_SEARCH_RESULT_KEY = `${VECTOR_STORE_SEARCH_KEY}:result`;
