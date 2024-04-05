@@ -33,10 +33,20 @@
       "require": "./dist/cjs/use-captain-action/index.js",
       "import": "./dist/esm/use-captain-action/index.js"
     },
+    "./use-object": {
+      "types": "./dist/types/use-object/index.d.ts",
+      "require": "./dist/cjs/use-object/index.js",
+      "import": "./dist/esm/use-object/index.js"
+    },
     "./use-required-downloads": {
       "types": "./dist/types/use-required-downloads/index.d.ts",
       "require": "./dist/cjs/use-required-downloads/index.js",
       "import": "./dist/esm/use-required-downloads/index.js"
+    },
+    "./use-vector-store": {
+      "types": "./dist/types/use-vector-store/index.d.ts",
+      "require": "./dist/cjs/use-vector-store/index.js",
+      "import": "./dist/esm/use-vector-store/index.js"
     }
   },
   "files": [
@@ -55,11 +65,14 @@
   },
   "dependencies": {
     "@captn/utils": "^0.11.0",
-    "dot-prop": "^8.0.2"
+    "dot-prop": "^8.0.2",
+    "use-debounce": "^10.0.0",
+    "lodash.isequal": "^4.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@types/lodash.isequal": "^4.5.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

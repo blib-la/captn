@@ -1,3 +1,4 @@
+export const ERROR_KEY = "ERROR";
 export const APP_KEY = "APP";
 export const APP_MESSAGE_KEY = `${APP_KEY}:message`;
 
@@ -7,6 +8,12 @@ export const ACTION_RESPONSE_KEY = `${ACTION_KEY}:message`;
 export const USER_KEY = "USER";
 export const USER_LANGUAGE_KEY = `${USER_KEY}:language`;
 export const USER_THEME_KEY = `${USER_KEY}:theme`;
+
+export const VECTOR_STORE_KEY = "VECTOR_STORE";
+export const VECTOR_STORE_SEARCH_KEY = `${VECTOR_STORE_KEY}:search`;
+export const VECTOR_STORE_SCROLL_KEY = `${VECTOR_STORE_KEY}:scroll`;
+export const VECTOR_STORE_SEARCH_RESULT_KEY = `${VECTOR_STORE_SEARCH_KEY}:result`;
+export const VECTOR_STORE_SCROLL_RESULT_KEY = `${VECTOR_STORE_SCROLL_KEY}:result`;
 
 export const INVENTORY_KEY = "INVENTORY";
 export const INVENTORY_IMAGES_KEY = `${INVENTORY_KEY}:images`;

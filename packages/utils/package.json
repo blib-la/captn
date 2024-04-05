@@ -62,6 +62,7 @@
     "access": "public"
   },
   "dependencies": {
-    "type-fest": "^4.14.0"
+    "type-fest": "^4.14.0",
+    "@qdrant/js-client-rest": "^1.8.1"
   }
 }

@@ -32,6 +32,7 @@
       "warn",
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
     ],
+    "camelcase": "warn",
     "curly": "error",
     "no-nested-ternary": "error",
     "no-multiple-empty-lines": "error",
