@@ -237,6 +237,11 @@ export type VectorStoreDocument = {
 		 * The absolute path to the file.
 		 */
 		filePath?: string;
+
+		/**
+		 * The file type, e.g. .jpg, .txt.
+		 */
+		fileType?: string;
 	};
 };
 
