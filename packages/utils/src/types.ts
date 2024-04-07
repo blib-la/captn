@@ -239,7 +239,7 @@ export type VectorStoreDocument = {
 		filePath?: string;
 
 		/**
-		 * The file type, e.g. .jpg, .txt.
+		 * The file type, e.g. jpg, txt.
 		 */
 		fileType?: string;
 	};
