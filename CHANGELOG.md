@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/blib-la/captn/compare/v0.14.0...v0.15.0) (2024-04-09)
+
+
+### Features
+
+* **react:** add limit to vector searches ([b238f73](https://github.com/blib-la/captn/commit/b238f73dbb0ad67e1aefb77a65d54b20e54d4c12))
+
+
+
+
+
 # [0.14.0](https://github.com/blib-la/captn/compare/v0.13.0...v0.14.0) (2024-04-07)
 
 
