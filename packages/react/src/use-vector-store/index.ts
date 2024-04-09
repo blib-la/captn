@@ -27,7 +27,10 @@ import { useObject } from "../use-object";
  * const searchResults = useVectorStore('search term', { score_threshold: 0.5 });
  * // searchResults will contain an array of search responses where each item has a score above 0.5
  */
-export function useVectorStore(query: string, { score_threshold, filter }: SearchOptions = {}) {
+export function useVectorStore(
+	query: string,
+	{ score_threshold, filter, limit }: SearchOptions = {}
+) {
 	const [query_] = useDebounce(query, 300, { leading: true, trailing: true });
 	const [data, setData] = useState<VectorStoreResponse[]>([]); // State to store the search results
 	const [error, setError] = useState<Error | null>(null);
@@ -38,12 +41,12 @@ export function useVectorStore(query: string, { score_threshold, filter }: Searc
 			// Only proceed with a non-empty query
 			window.ipc.send(VECTOR_STORE_SEARCH_KEY, {
 				query: query_,
-				options: { score_threshold, filter: filter_ },
+				options: { score_threshold, limit, filter: filter_ },
 			});
 		} else {
 			setData([]);
 		}
-	}, [query_, score_threshold, filter_]);
+	}, [query_, score_threshold, filter_, limit]);
 
 	useEffect(() => {
 		const unsubscribeResult = window.ipc.on(VECTOR_STORE_SEARCH_RESULT_KEY, data_ => {
@@ -62,16 +65,16 @@ export function useVectorStore(query: string, { score_threshold, filter }: Searc
 	return { data, error };
 }
 
-export function useVectorScroll({ order_by, with_payload, filter }: ScrollOptions = {}) {
+export function useVectorScroll({ order_by, with_payload, limit, filter }: ScrollOptions = {}) {
 	const [data, setData] = useState<VectorStoreResponse[]>([]); // State to store the search results
 	const [error, setError] = useState<Error | null>(null);
 	const filter_ = useObject(filter, 1000);
 
 	useEffect(() => {
 		window.ipc.send(VECTOR_STORE_SCROLL_KEY, {
-			options: { order_by, with_payload, filter: filter_ },
+			options: { order_by, with_payload, limit, filter: filter_ },
 		});
-	}, [order_by, with_payload, filter_]);
+	}, [order_by, with_payload, filter_, limit]);
 
 	useEffect(() => {
 		const unsubscribeResult = window.ipc.on(VECTOR_STORE_SCROLL_RESULT_KEY, data_ => {
