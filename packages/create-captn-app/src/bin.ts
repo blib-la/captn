@@ -6,7 +6,7 @@ import path from "node:path";
 import process from "node:process";
 
 import chalk from "chalk";
-import execa from "execa";
+import { execa } from "execa";
 import meow from "meow";
 
 import { downloadAndExtractRepo, getRepoInfo, hasRepo } from "./template.js";
