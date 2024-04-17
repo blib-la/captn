@@ -9,7 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blib-la/captn.git"
+    "url": "git+https://github.com/blib-la/captn.git",
+    "directory": "packages/create-captain-app"
   },
   "license": "AGPL-3.0-or-later",
   "author": {
@@ -19,11 +20,15 @@
   "bin": {
     "create-captain-app": "./dist/bin.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "npx rimraf dist",
     "clean:demo": "npx rimraf my-captain-app",
     "build": "tsc",
-    "dev": "tsx ./src/bin.ts npx create captain-app"
+    "dev": "tsx ./src/bin.ts",
+    "dev:dist": "npx . some-app"
   },
   "dependencies": {
     "axios": "^1.6.8",
@@ -40,5 +45,8 @@
     "captain",
     "cli",
     "create-app"
-  ]
+  ],
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -37,7 +37,7 @@ const { input, flags } = meow(
 );
 
 // Npx create
-const [, , , name = "my-captain-app"] = input;
+const [name = "my-captain-app"] = input;
 const { template } = flags;
 console.log(chalk.green("Welcome to the Captain App Creator!"));
 
