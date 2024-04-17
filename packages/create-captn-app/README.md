@@ -27,8 +27,8 @@ npx create-captain-app [app-name] [--template <template-url> | -t <template-url>
 Create a new Captain application by specifying the name of your new app and optionally, the template URL:
 
 ```bash
-npx create captain-app my-captain-app
-npx create captain-app my-next-app --template https://github.com/blib-la/captain-next-app-example
+npx create-captain-app my-captain-app
+npx create-captain-app my-next-app --template https://github.com/blib-la/captain-next-app-example
 ```
 ### Default App Name
 
@@ -43,7 +43,7 @@ If no template is specified, `create-captain-app` will use the default Next.js t
 You can specify any GitHub repository URL that contains a Captain-compatible template:
 
 ```bash
-npx create captain-app my-vue-app --template https://github.com/some-user/some-captain-vue-template
+npx create-captain-app my-vue-app --template https://github.com/some-user/some-captain-vue-template
 ```
 
 ## Custom Templates
