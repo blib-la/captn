@@ -1,6 +1,6 @@
 {
   "name": "create-captain-app",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "description": "CLI tool to create Captain apps",
   "homepage": "https://github.com/blib-la/captn/",
   "type": "module",

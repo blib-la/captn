@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.1](https://github.com/blib-la/captn/compare/v0.16.0...v0.16.1) (2024-04-17)
+
+
+### Bug Fixes
+
+* **create-captain-app:** cli not working ([9041f6f](https://github.com/blib-la/captn/commit/9041f6ffb3145797b386c726355b6db4ebe48368))
+
+
+
+
+
 # [0.16.0](https://github.com/blib-la/captn/compare/v0.15.0...v0.16.0) (2024-04-17)
 
 
