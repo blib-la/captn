@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/blib-la/captn/compare/v0.16.1...v0.16.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* **create-captain-app:** execa import wrong ([2979733](https://github.com/blib-la/captn/commit/29797332cc847e0a249522136614246c852cb1e9))
+* **create-captain-app:** missing dependency ([c67caa2](https://github.com/blib-la/captn/commit/c67caa28411d9b0b35aaf02f67e5fdf84e98bcf1))
+
+
+
+
+
 ## [0.16.1](https://github.com/blib-la/captn/compare/v0.16.0...v0.16.1) (2024-04-17)
 
 
