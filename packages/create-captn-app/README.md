@@ -1,22 +1,21 @@
 # Create Captain App
 
-`create-captain-app` is a command-line utility that simplifies the creation of Captain-based Electron applications by providing a straightforward way to generate projects from a range of customizable templates. Captain is an Electron app framework designed for creating applications that can be exported as static websites, supporting a variety of web technologies.
+`create-captain-app` is a command-line utility designed to streamline the process of creating applications using Captain, an Electron app framework. It enables users to generate projects from a variety of customizable templates that can be exported as static websites, supporting a wide range of web technologies.
 
 ## Features
 
-- **Versatility**: Supports multiple front-end frameworks including Next.js, Svelte, Vue.js, and basic HTML + CSS.
-- **Simplicity**: Easily generate new projects with a single command, similar to `create-react-app` or `create-next-app`.
-- **Flexibility**: Create static exportable Electron apps using any web technology that supports static site generation.
-- **Template-based**: Start with a template that best fits your project needs, modifying it as required.
+- **Versatility**: Supports multiple front-end frameworks, including Next.js, Svelte, Vue.js, and basic HTML + CSS.
+- **Simplicity**: Allows easy project generation with a single command, akin to `create-react-app` or `create-next-app`.
+- **Template-based**: Offers a selection of templates to kick-start your project, each customizable to meet specific needs.
 
 ## Prerequisites
 
-- **Node.js**: Ensure you have Node.js installed (20 or later).
-- **Git**: Git is required.
+- **Node.js**: Version 20 or later must be installed on your system.
+- **Git**: Required for version control.
 
 ## Installation
 
-To use `create-captain-app`, run the following command:
+Install `create-captain-app` using the following command:
 
 ```bash
 npx create-captain-app [app-name] [--template <template-url> | -t <template-url>]
@@ -24,28 +23,37 @@ npx create-captain-app [app-name] [--template <template-url> | -t <template-url>
 
 ## Usage
 
-Create a new Captain application by specifying the name of your new app and optionally, the template URL:
+To create a new Captain application, specify the name of your app and optionally, a template URL:
 
 ```bash
 npx create-captain-app my-captain-app
 npx create-captain-app my-next-app --template https://github.com/blib-la/captain-next-app-example
 ```
-### Default App Name
 
-If you do not specify an application name, create-captain-app will automatically use "my-captain-app" as the default project name.
+### Default Settings
 
-### Default Template
+- **App Name**: If not specified, `create-captain-app` defaults to using "my-captain-app" as the project name.
+- **Template**: If no template URL is provided, the default Next.js template for Captain will be used.
 
-If no template is specified, `create-captain-app` will use the default Next.js template configured for Captain.
+### Template Selection
 
-### Selecting a Template
-
-You can specify any GitHub repository URL that contains a Captain-compatible template:
+Specify any GitHub repository URL hosting a Captain-compatible template to use:
 
 ```bash
 npx create-captain-app my-vue-app --template https://github.com/some-user/some-captain-vue-template
 ```
 
-## Custom Templates
+## Creating Custom Templates
 
-To create a custom template, ensure your project is compatible with Captain and can be exported as a static site. For guidance, refer to the [default starter app](https://github.com/blib-la/captain-starter-app).
+To develop a custom template, ensure your project aligns with Captain requirements and can be exported as a static site. Consult the [default starter app](https://github.com/blib-la/captain-starter-app) for setup guidance.
+
+## Configuring Your Project
+
+After project setup, adjust the metadata in the `captain.md` file to match your project specifics. This file uses YAML frontmatter for configuration:
+
+- **Preserve the Default ID**: The initial `id` matches the `packageJson.name` and is uniquely set by our CLI. We recommend keeping the default settings to avoid conflicts.
+
+## Building Your App
+
+Depending on your chosen template, begin by modifying the source files. For example, our Next.js starter app features a simple random cat generator powered by Stable Diffusion XL (SDXL).
+
