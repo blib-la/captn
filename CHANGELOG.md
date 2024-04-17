@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/blib-la/captn/compare/v0.16.2...v0.17.0) (2024-04-17)
+
+
+### Features
+
+* **create-captain-app:** auto generate captain id and file ([4459157](https://github.com/blib-la/captn/commit/4459157d4a0199086286a08f77ff66f089e8767a))
+
+
+
+
+
 ## [0.16.2](https://github.com/blib-la/captn/compare/v0.16.1...v0.16.2) (2024-04-17)
 
 
