@@ -1,8 +1,8 @@
 # @captn/utils
 
-[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
-
 The `@captn/utils` package is a crucial component of the Captain suite of utilities, providing essential helper functions and constants designed to facilitate application development within the Captain ecosystem. This includes handling downloads, string manipulation, color processing, and interacting with HTML elements.
+
+[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
 ## Features
 

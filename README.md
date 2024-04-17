@@ -1,8 +1,8 @@
 # Captn
 
-[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
-
 Welcome to the official repository for the `captn` SDK, a suite of packages designed to empower developers to create custom applications using the Captain framework. This repository manages the core packages such as `@captn/joy`, `@captn/react`, `@captn/theme`, `@captn/utils` and `create-captain-app`.
+
+[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
 ## Overview
 

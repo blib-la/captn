@@ -2,6 +2,8 @@
 
 `create-captain-app` is a command-line utility designed to streamline the process of creating applications using Captain, an Electron app framework. It enables users to generate projects from a variety of customizable templates that can be exported as static websites, supporting a wide range of web technologies.
 
+[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
+
 ## Features
 
 - **Versatility**: Supports multiple front-end frameworks, including Next.js, Svelte, Vue.js, and basic HTML + CSS.

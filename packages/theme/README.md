@@ -1,8 +1,8 @@
 # @captn/theme
 
-[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
-
 The `@captn/theme` package is a core component of the Captain framework, designed to manage and provide consistent theming across applications. This package defines a standardized set of color palettes and utility functions to manipulate these colors for various theming purposes.
+
+[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
 ## Features
 

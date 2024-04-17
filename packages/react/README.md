@@ -1,8 +1,8 @@
 # @captn/react
 
-[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
-
 The `@captn/react` package includes a collection of React hooks that integrate with the Captain framework, simplifying common tasks such as handling actions, managing downloads, and interacting with a vector store directly from React components.
+
+[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
 ## Features
 
