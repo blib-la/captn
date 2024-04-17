@@ -67,10 +67,6 @@ Check for linting errors:
 npm run lint
 ```
 
-## Contributing
-
-Contributions are always welcome! Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) document for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this repository.
@@ -83,7 +79,7 @@ See also the list of [contributors](https://github.com/blib-la/captn/contributor
 
 ## License
 
-This project is licensed under the AGPL 3.0 License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the AGPL 3.0 License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
