@@ -25,6 +25,15 @@ export const WINDOW_MINIMIZE_KEY = `${WINDOW_KEY}:minimize`;
 export const WINDOW_MAXIMIZE_KEY = `${WINDOW_KEY}:maximize`;
 export const WINDOW_CLOSE_KEY = `${WINDOW_KEY}:close`;
 
+export const CHILD_KEY = "CHILD";
+export const CHILD_OPEN_KEY = `${CHILD_KEY}:open`;
+export const CHILD_CLOSE_KEY = `${CHILD_KEY}:close`;
+export const CHILD_MAXIMIZE_KEY = `${CHILD_KEY}:maximize`;
+export const CHILD_MESSAGE_FROM_PARENT_KEY = `${CHILD_KEY}:message-from-parent`;
+export const CHILD_MESSAGE_FROM_CHILD_KEY = `${CHILD_KEY}:message-from-child`;
+export const CHILD_MESSAGE_TO_PARENT_KEY = `${CHILD_KEY}:message-to-parent`;
+export const CHILD_MESSAGE_TO_CHILD_KEY = `${CHILD_KEY}:message-to-child`;
+
 export const LOCAL_PROTOCOL = "captain";
 
 export const DOWNLOADS_KEY = "DOWNLOADS";
