@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/blib-la/captn/compare/v0.17.3...v0.18.0) (2024-04-18)
+
+
+### Features
+
+* **utils:** add child window keys ([35810bb](https://github.com/blib-la/captn/commit/35810bb1186d1e0860d6e9396790e9d750c61924))
+
+
+
+
+
 ## [0.17.3](https://github.com/blib-la/captn/compare/v0.17.2...v0.17.3) (2024-04-17)
 
 **Note:** Version bump only for package @captn/utils
