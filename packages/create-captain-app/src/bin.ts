@@ -10,9 +10,9 @@ import chalk from "chalk";
 import { execa } from "execa";
 import matter from "gray-matter";
 import humanizeString from "humanize-string";
+import YAML from "js-yaml";
 import meow from "meow";
 import { v4 } from "uuid";
-import YAML from "yaml";
 
 import { downloadAndExtractRepo, getRepoInfo, hasRepo } from "./template.js";
 
@@ -82,7 +82,7 @@ export async function currentGitUserEmail() {
 
 export function createCaptainMd(data: VectorStoreDocument["payload"]) {
 	return `---
-${YAML.stringify(data)}
+${YAML.dump(data)}
 ---
 
 open the app named ${data.label}
