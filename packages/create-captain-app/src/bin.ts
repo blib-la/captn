@@ -5,10 +5,14 @@ import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
+import { VectorStoreDocument } from "@captn/utils/types";
 import chalk from "chalk";
 import { execa } from "execa";
+import matter from "gray-matter";
+import humanizeString from "humanize-string";
 import meow from "meow";
 import { v4 } from "uuid";
+import YAML from "yaml";
 
 import { downloadAndExtractRepo, getRepoInfo, hasRepo } from "./template.js";
 
@@ -43,6 +47,7 @@ const { template } = flags;
 console.log(chalk.green("Welcome to the Captain App Creator!"));
 
 const CWD = process.cwd();
+const id = v4();
 
 console.log(chalk.blue(`Setting up your new Captain app using ${template}`));
 
@@ -54,8 +59,6 @@ export function exitWithRepositoryError() {
 	);
 	process.exit(1);
 }
-
-const id = v4();
 
 export async function currentGitUserName() {
 	try {
@@ -77,23 +80,50 @@ export async function currentGitUserEmail() {
 	}
 }
 
-export function createCaptainMd(username: string) {
+export function createCaptainMd(data: VectorStoreDocument["payload"]) {
 	return `---
-id: ${id}
-label: My Captain App
-language: en
-type: app
-creatorID: ${username}
-icon: Image
-iconColor: "#DB2777"
-parameters:
-    width: 800
-    height: 1024
-    minWidth: 800
-    minHeight: 1024
+${YAML.stringify(data)}
 ---
 
-open the app named My Captain App
+open the app named ${data.label}
+`;
+}
+
+export function createCaptainReadme(name: string) {
+	return `# ${name}
+
+This project is developed using [Captain](https://github.com/blib-la/captain), and was initialized with the [\`create-captain-app\`](https://github.com/blib-la/captn/tree/main/packages/create-captain-app) tool.
+
+## Getting Started
+
+Begin by launching the development server:
+
+\`\`\`bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+\`\`\`
+
+Navigate to [http://localhost:3000](http://localhost:3000) in your web browser to view the application.
+
+Modify the source files as needed; the application will automatically update to reflect changes. To ensure full functionality with Captain's core features, build and install the application within Captain after changes.
+
+## Learn More
+
+For additional information on Captain and how to utilize it effectively, consider the following resources:
+
+- [Captain Features and API](https://github.com/blib-la/captain) - Detailed documentation on the capabilities and usage of Captain.
+- [Captn SDK](https://github.com/blib-la/captn) - Access the SDK needed for extending Captain's functionalities.
+
+Please note that this project is currently in ALPHA phase, and ongoing developments and enhancements are expected.
+
+---
+
+This version maintains a concise structure while adjusting the flow to better suit the alpha stage of the project, emphasizing the process of starting development, the necessity of building within Captain for full integration, and pointing to essential resources.
 `;
 }
 
@@ -129,8 +159,29 @@ try {
 		await rm(gitFolder, { recursive: true });
 	}
 
+	const captainMD = path.join(newFolder, "captain.md");
+	let captainMDContent = "---\ntype: app\n---\n\n";
+	try {
+		captainMDContent = await readFile(captainMD, "utf8");
+	} catch (error) {
+		console.log(error);
+	}
+
+	const { data } = matter(captainMDContent);
+
+	await writeFile(
+		captainMD,
+		createCaptainMd({
+			language: "en",
+			...data,
+			id,
+			creatorID: username,
+			label: humanizeString(name),
+			type: "app",
+		})
+	);
+	await writeFile(path.join(newFolder, "README.md"), createCaptainReadme(humanizeString(name)));
 	const packagePath = path.join(newFolder, "package.json");
-	await writeFile(path.join(newFolder, "captain.md"), createCaptainMd(username));
 	const package_ = await readFile(packagePath, "utf-8");
 	const packageJson = JSON.parse(package_);
 	packageJson.name = id;

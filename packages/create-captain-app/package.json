@@ -31,12 +31,16 @@
     "dev:dist": "npx . some-app"
   },
   "dependencies": {
+    "@captn/utils": "^0.18.0",
     "axios": "^1.6.8",
     "chalk": "^5.3.0",
     "execa": "^8.0.1",
+    "gray-matter": "^4.0.3",
+    "humanize-string": "^3.0.0",
     "meow": "^13.2.0",
     "tar": "^6.2.1",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "yaml": "^2.4.1"
   },
   "devDependencies": {
     "@types/tar": "^6.1.12",
