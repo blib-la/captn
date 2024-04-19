@@ -199,6 +199,11 @@ export type VectorStoreDocument = {
 		language: string;
 
 		/**
+		 * The unique id of the creator, usually the GitHub name or verified/assigned id.
+		 */
+		creatorID: string;
+
+		/**
 		 * An optional action associated with the document. This could be an instruction to focus an element, call a function, or perform any other predefined action.
 		 */
 		action?: string;
@@ -212,6 +217,7 @@ export type VectorStoreDocument = {
 		 * An optional URL or path to an icon that represents the document or its action visually. Used in UI elements to enhance user experience.
 		 */
 		icon?: string;
+
 		/**
 		 * An optional color for the background of the icon.
 		 */
