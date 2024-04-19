@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/blib-la/captn/compare/v0.18.0...v0.19.0) (2024-04-19)
+
+
+### Features
+
+* **create-captain-app:** create a readme and inherit captain.md ([e75a514](https://github.com/blib-la/captn/commit/e75a5140aac6f1185bf24bdbf966827fd5f93c64))
+
+
+
+
+
 # [0.18.0](https://github.com/blib-la/captn/compare/v0.17.3...v0.18.0) (2024-04-18)
 
 **Note:** Version bump only for package create-captain-app

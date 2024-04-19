@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/blib-la/captn/compare/v0.18.0...v0.19.0) (2024-04-19)
+
+
+### Features
+
+* **utils:** extend vectorstore document ([6377917](https://github.com/blib-la/captn/commit/63779173a53b03c395507257653204591c8fd08c))
+
+
+
+
+
 # [0.18.0](https://github.com/blib-la/captn/compare/v0.17.3...v0.18.0) (2024-04-18)
 
 
