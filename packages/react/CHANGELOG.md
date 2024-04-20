@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.2](https://github.com/blib-la/captn/compare/v0.19.1...v0.19.2) (2024-04-20)
+
+
+### Bug Fixes
+
+* **react:** use required downloads ([02fe43c](https://github.com/blib-la/captn/commit/02fe43c47e38d469abee2916b23f097e0afa0d46))
+
+
+
+
+
 # [0.19.0](https://github.com/blib-la/captn/compare/v0.18.0...v0.19.0) (2024-04-19)
 
 **Note:** Version bump only for package @captn/react
