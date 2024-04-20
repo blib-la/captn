@@ -1,4 +1,4 @@
-import { DownloadEvent, DOWNLOADS_MESSAGE_KEY } from "@captn/utils/constants";
+import { DownloadEvent, DOWNLOADS_MESSAGE_KEY, DownloadState } from "@captn/utils/constants";
 import { RequiredDownload } from "@captn/utils/types";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -42,16 +42,14 @@ import { useCallback, useEffect, useRef, useState } from "react";
  *   {
  *     id: 'unique-download-id-1',
  *     source: 'https://example.com/file1.zip',
- *     destination: 'path/to/save/file1.zip',
+ *     destination: 'path/to/save',
  *     label: 'File 1',
- *     createdAt: Date.now(), // Note: `createdAt` property is optional and used for tracking.
  *   },
  *   {
  *     id: 'unique-download-id-2',
  *     source: 'https://example.com/file2.zip',
- *     destination: 'path/to/save/file2.zip',
+ *     destination: 'path/to/save',
  *     label: 'File 2',
- *     createdAt: Date.now(),
  *   }
  * ];
  *
@@ -91,6 +89,10 @@ export function useRequiredDownloads(requiredDownloads_: RequiredDownload[]) {
 	const [isCompleted, setIsCompleted] = useState(downloadCount >= requiredDownloadsLength);
 
 	const download = useCallback(async () => {
+		if (!window.ipc) {
+			return;
+		}
+
 		setIsDownloading(true);
 		for (const download of requiredDownloads) {
 			window.ipc.send(DOWNLOADS_MESSAGE_KEY, {
@@ -113,8 +115,16 @@ export function useRequiredDownloads(requiredDownloads_: RequiredDownload[]) {
 	}, [downloadCount, requiredDownloadsLength]);
 
 	useEffect(() => {
+		if (!window.ipc) {
+			return;
+		}
+
 		for (const requiredDownload of requiredDownloadsReference.current) {
 			const keyPath = requiredDownload.destination.replaceAll("/", ".");
+			const downloadKeyPath = [requiredDownload.destination, requiredDownload.id]
+				.join("/")
+				.replaceAll("/", ".");
+
 			window.ipc.inventoryStore
 				.get<
 					{
@@ -137,6 +147,11 @@ export function useRequiredDownloads(requiredDownloads_: RequiredDownload[]) {
 						});
 					}
 				});
+			window.ipc.downloadStore.get<DownloadState | undefined>(downloadKeyPath).then(value => {
+				if (value && [DownloadState.ACTIVE, DownloadState.UNPACKING].includes(value)) {
+					setIsDownloading(true);
+				}
+			});
 		}
 
 		const unsubscribeDownload = window.ipc.on(DOWNLOADS_MESSAGE_KEY, message => {
