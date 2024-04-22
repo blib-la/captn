@@ -109,6 +109,10 @@ export enum DownloadState {
 	 * The download is being unpacked.
 	 */
 	UNPACKING = "UNPACKING",
+	/**
+	 * There is an update.
+	 */
+	UPDATE = "UPDATE",
 }
 
 /**
