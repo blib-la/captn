@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/blib-la/captn/compare/v0.19.2...v0.20.0) (2024-04-22)
+
+
+### Features
+
+* **utils:** add the UPDATE state for downloads ([f76a725](https://github.com/blib-la/captn/commit/f76a7252e771e57c55feb18a71c4c367aee69ec3))
+
+
+
+
+
+
 # [0.19.0](https://github.com/blib-la/captn/compare/v0.18.0...v0.19.0) (2024-04-19)
 
 
