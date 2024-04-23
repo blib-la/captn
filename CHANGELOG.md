@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/blib-la/captn/compare/v0.20.0...v0.21.0) (2024-04-23)
+
+
+### Features
+
+* **@captn/joy:** allow disabling typography in title-bar ([887cef1](https://github.com/blib-la/captn/commit/887cef18b6c1399f65020bc8c143862dd35e6219))
+
+
+
+
+
+
 # [0.20.0](https://github.com/blib-la/captn/compare/v0.19.2...v0.20.0) (2024-04-22)
 
 
