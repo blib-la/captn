@@ -65,11 +65,13 @@ export function WindowControls({
 export function TitleBar({
 	children,
 	disableMaximize = false,
+	disableTypography,
 	color,
 	variant,
 }: {
 	children?: ReactNode;
 	disableMaximize?: boolean;
+	disableTypography?: boolean;
 	color?: SheetProps["color"];
 	variant?: SheetProps["variant"];
 }) {
@@ -81,16 +83,18 @@ export function TitleBar({
 			sx={{
 				display: "flex",
 				WebkitAppRegion: "drag",
-				alignContent: "center",
-				alignItems: "center",
+				alignContent: disableTypography ? undefined : "center",
+				alignItems: disableTypography ? undefined : "center",
 			}}
 		>
-			{children && (
-				<Typography level="body-xs" sx={{ pl: 1 }}>
-					{children}
-				</Typography>
-			)}
-			<Box sx={{ flex: 1 }} />
+			{children &&
+				(disableTypography ? (
+					<Box sx={{ flex: 1, px: 1 }}>{children}</Box>
+				) : (
+					<Typography level="body-xs" sx={{ pl: 1 }}>
+						{children}
+					</Typography>
+				))}
 			<WindowControls disableMaximize={disableMaximize} />
 		</Sheet>
 	);
