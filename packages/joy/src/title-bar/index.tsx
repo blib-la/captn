@@ -91,7 +91,7 @@ export function TitleBar({
 				(disableTypography ? (
 					<Box sx={{ display: "flex", flex: 1, px: 1 }}>{children}</Box>
 				) : (
-					<Typography level="body-xs" sx={{ pl: 1 }}>
+					<Typography level="body-xs" sx={{ flex: 1, px: 1 }}>
 						{children}
 					</Typography>
 				))}
