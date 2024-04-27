@@ -96,6 +96,11 @@ export enum DownloadState {
 	DONE = "DONE",
 
 	/**
+	 * The download requires a restart.
+	 */
+	RESTART = "RESTART",
+
+	/**
 	 * The download has encountered an error and did not complete.
 	 */
 	FAILED = "FAILED",
