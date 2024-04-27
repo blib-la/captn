@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.3](https://github.com/blib-la/captn/compare/v0.21.2...v0.21.3) (2024-04-27)
+
+
+### Bug Fixes
+
+* **@captn/utils:** make creatorID optional ([aa9f409](https://github.com/blib-la/captn/commit/aa9f4098c8358a49333c19f1d76b187dcdef101a))
+
+
+
+
+
 ## [0.21.2](https://github.com/blib-la/captn/compare/v0.21.1...v0.21.2) (2024-04-25)
 
 
