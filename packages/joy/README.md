@@ -1,4 +1,4 @@
-# @captn/react
+# @captn/joy
 
 The `@captn/joy` package provides a suite of UI components and utilities that facilitate building attractive and consistent interfaces for applications within the Captain framework. Built on top of the MUI Joy library, it extends and customizes its components to fit the specific needs of Captain applications, ensuring seamless integration and enhanced user experiences.
 
