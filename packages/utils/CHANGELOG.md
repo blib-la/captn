@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/blib-la/captn/compare/v0.21.3...v0.22.0) (2024-04-27)
+
+
+### Features
+
+* **@captn/utils:** add download restart state ([ac077ae](https://github.com/blib-la/captn/commit/ac077aed3718254a4c2202d80e2aba8e70ea24e5))
+
+
+
+
+
 ## [0.21.3](https://github.com/blib-la/captn/compare/v0.21.2...v0.21.3) (2024-04-27)
 
 
