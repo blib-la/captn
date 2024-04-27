@@ -201,7 +201,7 @@ export type VectorStoreDocument = {
 		/**
 		 * The unique id of the creator, usually the GitHub name or verified/assigned id.
 		 */
-		creatorID: string;
+		creatorID?: string;
 
 		/**
 		 * An optional action associated with the document. This could be an instruction to focus an element, call a function, or perform any other predefined action.
