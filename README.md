@@ -71,9 +71,6 @@ npm run lint
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this repository.
 
-## Authors
-
-- **Gregor Adams** - *Initial work* - [Pixelass](https://github.com/pixelass)
 
 See also the list of [contributors](https://github.com/blib-la/captn/contributors) who participated in this project.
 
@@ -81,12 +78,4 @@ See also the list of [contributors](https://github.com/blib-la/captn/contributor
 
 This project is licensed under the AGPL 3.0 License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
----
-
-This README template provides a basic structure that includes a description, installation instructions, usage examples, and contribution guidelines, which are essential for open-source projects. You can further customize it to better fit the specific needs and nuances of the `captn` project.
