@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/blib-la/captn/compare/v0.22.0...v0.23.0) (2024-05-03)
+
+
+### Features
+
+* **@captn/utils:** rename LOCAL_PROTOCOL ([51bdd6c](https://github.com/blib-la/captn/commit/51bdd6ce0520df60bd52fd0d62f762ceeb5dafb4))
+
+
+
+
+
 # [0.22.0](https://github.com/blib-la/captn/compare/v0.21.3...v0.22.0) (2024-04-27)
 
 
