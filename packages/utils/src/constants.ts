@@ -34,7 +34,7 @@ export const CHILD_MESSAGE_FROM_CHILD_KEY = `${CHILD_KEY}:message-from-child`;
 export const CHILD_MESSAGE_TO_PARENT_KEY = `${CHILD_KEY}:message-to-parent`;
 export const CHILD_MESSAGE_TO_CHILD_KEY = `${CHILD_KEY}:message-to-child`;
 
-export const LOCAL_PROTOCOL = "captain";
+export const LOCAL_PROTOCOL = "captain-file";
 
 export const DOWNLOADS_KEY = "DOWNLOADS";
 export const DOWNLOADS_MESSAGE_KEY = `${DOWNLOADS_KEY}:message`;
