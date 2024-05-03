@@ -1,6 +1,6 @@
 {
   "name": "@captn/joy",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
@@ -64,8 +64,8 @@
     "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
-    "@captn/theme": "^0.23.0",
-    "@captn/utils": "^0.23.0",
+    "@captn/theme": "^0.24.0",
+    "@captn/utils": "^0.24.0",
     "@mui/base": "5.0.0-beta.37",
     "@mui/icons-material": "5.15.11",
     "@mui/material": "5.15.11",
