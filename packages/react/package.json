@@ -33,6 +33,21 @@
       "require": "./dist/cjs/use-captain-action/index.js",
       "import": "./dist/esm/use-captain-action/index.js"
     },
+    "./use-resettable-state": {
+      "types": "./dist/types/use-resettable-state/index.d.ts",
+      "require": "./dist/cjs/use-resettable-state/index.js",
+      "import": "./dist/esm/use-resettable-state/index.js"
+    },
+    "./use-unload": {
+      "types": "./dist/types/use-unload/index.d.ts",
+      "require": "./dist/cjs/use-unload/index.js",
+      "import": "./dist/esm/use-unload/index.js"
+    },
+    "./use-text-to-image": {
+      "types": "./dist/types/use-text-to-image/index.d.ts",
+      "require": "./dist/cjs/use-text-to-image/index.js",
+      "import": "./dist/esm/use-text-to-image/index.js"
+    },
     "./use-object": {
       "types": "./dist/types/use-object/index.d.ts",
       "require": "./dist/cjs/use-object/index.js",
