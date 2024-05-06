@@ -53,6 +53,11 @@
       "require": "./dist/cjs/use-object/index.js",
       "import": "./dist/esm/use-object/index.js"
     },
+    "./use-save-image": {
+      "types": "./dist/types/use-save-image/index.d.ts",
+      "require": "./dist/cjs/use-save-image/index.js",
+      "import": "./dist/esm/use-save-image/index.js"
+    },
     "./use-required-downloads": {
       "types": "./dist/types/use-required-downloads/index.d.ts",
       "require": "./dist/cjs/use-required-downloads/index.js",
@@ -82,12 +87,14 @@
     "@captn/utils": "^0.25.0",
     "dot-prop": "^8.0.2",
     "lodash.isequal": "^4.5.0",
-    "use-debounce": "^10.0.0"
+    "use-debounce": "^10.0.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/lodash.isequal": "^4.5.8",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@types/uuid": "^9.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
