@@ -8,6 +8,7 @@ import process from "node:process";
 import { VectorStoreDocument } from "@captn/utils/types";
 import chalk from "chalk";
 import { execa } from "execa";
+import { globby } from "globby";
 import matter from "gray-matter";
 import humanizeString from "humanize-string";
 import YAML from "js-yaml";
@@ -159,7 +160,11 @@ try {
 		await rm(gitFolder, { recursive: true });
 	}
 
-	const captainMD = path.join(newFolder, "captain.md");
+	const [captainMD] = await globby([newFolder], {
+		expandDirectories: {
+			files: ["captain.md"],
+		},
+	});
 	let captainMDContent = "---\ntype: app\n---\n\n";
 	try {
 		captainMDContent = await readFile(captainMD, "utf8");
