@@ -69,6 +69,9 @@
       "import": "./dist/esm/use-vector-store/index.js"
     }
   },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
