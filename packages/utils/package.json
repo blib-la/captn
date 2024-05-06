@@ -16,9 +16,12 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
+      "types": "./dist/types/index.d.ts",
       "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
+      "import": "./dist/esm/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/types.d.ts"
     },
     "./color": {
       "import": "./dist/esm/color.js",
@@ -39,11 +42,11 @@
       "import": "./dist/esm/constants.js",
       "require": "./dist/cjs/constants.js",
       "types": "./dist/types/constants.d.ts"
-    },
-    "./types": {
-      "types": "./dist/types/types.d.ts"
     }
   },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -58,11 +61,11 @@
     "watch:esm": "tsc --watch --project tsconfig.production.esm.json",
     "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@qdrant/js-client-rest": "^1.8.1",
     "type-fest": "^4.14.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
