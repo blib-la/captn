@@ -20,6 +20,9 @@
       "require": "./dist/cjs/index.js",
       "index": "./dist/esm/index.js"
     },
+    "./types": {
+      "types": "./dist/types/types.d.ts"
+    },
     "./custom-scrollbars": {
       "types": "./dist/types/custom-scrollbars/index.d.ts",
       "require": "./dist/cjs/custom-scrollbars/index.js",
@@ -29,9 +32,6 @@
       "types": "./dist/types/theme/index.d.ts",
       "require": "./dist/cjs/theme/index.js",
       "import": "./dist/esm/theme/index.js"
-    },
-    "./types": {
-      "types": "./dist/types/types.d.ts"
     },
     "./styles": {
       "types": "./dist/types/styles/index.d.ts",
@@ -64,6 +64,9 @@
       "import": "./dist/esm/app-frame/index.js"
     }
   },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
