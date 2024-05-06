@@ -69,6 +69,7 @@
     "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
+    "@captn/react": "^0.24.0",
     "@captn/theme": "^0.24.0",
     "@captn/utils": "^0.24.0",
     "@mui/base": "5.0.0-beta.37",
