@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/blib-la/captn/compare/v0.25.0...v0.26.0) (2024-05-06)
+
+
+### Features
+
+* **@captn/joy:** add run and save buttons ([7731dc1](https://github.com/blib-la/captn/commit/7731dc195a7cd0ae1ad9bfd955ae213d8cceb58c))
+
+
+
+
+
 # [0.25.0](https://github.com/blib-la/captn/compare/v0.24.0...v0.25.0) (2024-05-06)
 
 

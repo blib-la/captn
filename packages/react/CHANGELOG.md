@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/blib-la/captn/compare/v0.25.0...v0.26.0) (2024-05-06)
+
+
+### Features
+
+* **@captn/react:** add hook to save images ([1b6aded](https://github.com/blib-la/captn/commit/1b6aded73e5d921f960f6810ee648c8361ba5584))
+
+
+
+
+
 # [0.25.0](https://github.com/blib-la/captn/compare/v0.24.0...v0.25.0) (2024-05-06)
 
 
