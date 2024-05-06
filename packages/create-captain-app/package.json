@@ -2,8 +2,13 @@
   "name": "create-captain-app",
   "version": "0.26.0",
   "description": "CLI tool to create Captain apps",
+  "keywords": [
+    "electron",
+    "captain",
+    "cli",
+    "create-app"
+  ],
   "homepage": "https://github.com/blib-la/captn/",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
   },
@@ -17,6 +22,7 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
+  "type": "module",
   "bin": {
     "create-captain-app": "./dist/bin.js"
   },
@@ -24,9 +30,9 @@
     "dist"
   ],
   "scripts": {
+    "build": "tsc",
     "clean": "npx rimraf dist",
     "clean:demo": "npx rimraf my-captain-app",
-    "build": "tsc",
     "dev": "tsx ./src/bin.ts",
     "dev:dist": "npx . some-app"
   },
@@ -49,12 +55,6 @@
     "@types/uuid": "^9.0.8",
     "tsx": "^4.7.2"
   },
-  "keywords": [
-    "electron",
-    "captain",
-    "cli",
-    "create-app"
-  ],
   "engines": {
     "node": ">=20"
   }
