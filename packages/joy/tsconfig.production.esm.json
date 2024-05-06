@@ -13,6 +13,9 @@
       ],
       "@captn/theme/*": [
         "../theme/dist/types/*"
+      ],
+      "@captn/react/*": [
+        "../react/dist/types/*"
       ]
     }
   },
