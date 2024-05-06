@@ -20,15 +20,18 @@
       "require": "./dist/cjs/index.js",
       "import": "./dist/esm/index.js"
     },
+    "./types": {
+      "types": "./dist/types/types.d.ts"
+    },
     "./palette": {
       "types": "./dist/types/palette.d.ts",
       "require": "./dist/cjs/palette.js",
       "import": "./dist/esm/palette.js"
-    },
-    "./types": {
-      "types": "./dist/types/types.d.ts"
     }
   },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
