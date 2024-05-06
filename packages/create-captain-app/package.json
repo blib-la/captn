@@ -1,6 +1,6 @@
 {
   "name": "create-captain-app",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description": "CLI tool to create Captain apps",
   "homepage": "https://github.com/blib-la/captn/",
   "type": "module",
@@ -31,7 +31,7 @@
     "dev:dist": "npx . some-app"
   },
   "dependencies": {
-    "@captn/utils": "^0.24.0",
+    "@captn/utils": "^0.25.0",
     "axios": "^1.6.8",
     "chalk": "^5.3.0",
     "execa": "^8.0.1",
@@ -44,8 +44,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@types/tar": "^6.1.12",
     "@types/js-yaml": "^3.12.5",
+    "@types/tar": "^6.1.12",
     "@types/uuid": "^9.0.8",
     "tsx": "^4.7.2"
   },

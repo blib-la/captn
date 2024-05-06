@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/blib-la/captn/compare/v0.24.0...v0.25.0) (2024-05-06)
+
+
+### Features
+
+* **@captn/joy:** add note for required downloads ([532820f](https://github.com/blib-la/captn/commit/532820f64335a779f4058ede177cbfd1d982751b))
+
+
+
+
+
 # [0.24.0](https://github.com/blib-la/captn/compare/v0.23.0...v0.24.0) (2024-05-03)
 
 **Note:** Version bump only for package @captn/joy
