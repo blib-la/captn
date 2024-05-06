@@ -38,6 +38,11 @@
       "require": "./dist/cjs/styles/index.js",
       "import": "./dist/esm/styles/index.js"
     },
+    "./required-downloads": {
+      "types": "./dist/types/required-downloads/index.d.ts",
+      "require": "./dist/cjs/required-downloads/index.js",
+      "import": "./dist/esm/required-downloads/index.js"
+    },
     "./title-bar": {
       "types": "./dist/types/title-bar/index.d.ts",
       "require": "./dist/cjs/title-bar/index.js",
