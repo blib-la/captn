@@ -48,6 +48,16 @@
       "require": "./dist/cjs/title-bar/index.js",
       "import": "./dist/esm/title-bar/index.js"
     },
+    "./save-button": {
+      "types": "./dist/types/save-button/index.d.ts",
+      "require": "./dist/cjs/save-button/index.js",
+      "import": "./dist/esm/save-button/index.js"
+    },
+    "./run-button": {
+      "types": "./dist/types/run-button/index.d.ts",
+      "require": "./dist/cjs/run-button/index.js",
+      "import": "./dist/esm/run-button/index.js"
+    },
     "./app-frame": {
       "types": "./dist/types/app-frame/index.d.ts",
       "require": "./dist/cjs/app-frame/index.js",
