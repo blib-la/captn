@@ -23,9 +23,11 @@ import { useObject } from "../use-object";
  * @returns {VectorStoreResponse[]} The search results as an array of VectorStoreResponse objects.
  *
  * @example
+ * ```ts
  * // In a React component
  * const searchResults = useVectorStore('search term', { score_threshold: 0.5 });
  * // searchResults will contain an array of search responses where each item has a score above 0.5
+ * ```
  */
 export function useVectorStore(
 	query: string,
@@ -65,6 +67,26 @@ export function useVectorStore(
 	return { data, error };
 }
 
+/**
+ * Custom React hook to interact with the vector store for scrolling through large datasets.
+ *
+ * This hook manages the state of scrolling operations within a vector store, sending scroll
+ * parameters to the vector store and managing the state of the scroll results. It provides a
+ * continuous way to retrieve large sets of results where the dataset is too large to feasibly
+ * return at once, using debounced filter settings to minimize unnecessary queries.
+ *
+ * @param {ScrollOptions} [{ order_by, with_payload, limit, filter }={}] The scrolling options
+ * including ordering, payload inclusion, limit, and filtering criteria to tailor the scroll results.
+ * @returns {{ data: VectorStoreResponse[], error: Error | null }} An object containing an array of
+ * VectorStoreResponse objects representing the scroll results, and an error object if an error occurs.
+ *
+ * @example
+ * ```ts
+ * // In a React component
+ * const { data, error } = useVectorScroll({ order_by: 'date', limit: 10 });
+ * // data will contain an array of VectorStoreResponses, each representing a chunk of the vector store data
+ * ```
+ */
 export function useVectorScroll({ order_by, with_payload, limit, filter }: ScrollOptions = {}) {
 	const [data, setData] = useState<VectorStoreResponse[]>([]); // State to store the search results
 	const [error, setError] = useState<Error | null>(null);
