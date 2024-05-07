@@ -7,6 +7,32 @@ import LinearProgress from "@mui/joy/LinearProgress";
 import Typography from "@mui/joy/Typography";
 import { useMemo } from "react";
 
+/**
+ * RequiredDownloads is a component that manages and displays the download progress of required files for an application.
+ * It provides user feedback on the status of each download and a button to initiate the downloading process.
+ * The component
+ * is intended to ensure all necessary files are downloaded for the application to function properly.
+ *
+ * @param {Object} props - The properties passed to the RequiredDownloads component.
+ * @param {string} [props.note] - Optional custom message to display about the download requirements.
+ * @param {boolean} [props.disableTypography] - If true, the note will be displayed as plain text instead of using the Typography component.
+ * @param {Function} [props.downloadLabel] - A function that returns a custom label for the download button, receiving the current and total required download counts.
+ * @param {Array} props.allRequiredDownloads - An array of objects detailing each required download,
+ * including label, id, source, destination, and an optional flag to unzip the downloaded file.
+ *
+ * This component utilizes the `useRequiredDownloads` hook to track and manage the download states and progress.
+ *
+ * @example
+ * ```tsx
+ * <RequiredDownloads
+ *   note="Please ensure you download all necessary files to proceed."
+ *   allRequiredDownloads={[
+ *     { label: 'File 1', id: 'file1', source: '/source/file1.zip', destination: '/destination', unzip: true },
+ *     { label: 'File 2', id: 'file2', source: '/source/file2.jpg', destination: '/dest' }
+ *   ]}
+ * />
+ * ```
+ */
 export function RequiredDownloads({
 	note,
 	disableTypography,
