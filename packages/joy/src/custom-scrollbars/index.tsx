@@ -3,6 +3,14 @@ import { styled } from "@mui/joy/styles";
 import { CSSProperties, forwardRef, ReactNode } from "react";
 import { Scrollbars } from "react-custom-scrollbars";
 
+const StyledScrollbars = styled(Scrollbars)({
+	overflow: "hidden",
+	"&::-webkit-scrollbar": {
+		width: 0,
+		height: 0,
+	},
+});
+
 /**
  * CustomScrollbars is a component that encapsulates the `react-custom-scrollbars` library,
  * providing a stylized scrollbar experience. It uses Material UI's Joy styling system to
@@ -28,13 +36,6 @@ import { Scrollbars } from "react-custom-scrollbars";
  * This example sets a fixed height for the scrollbar area and includes some content that exceeds
  * the height of the container, making the scrollbar functional.
  */
-const StyledScrollbars = styled(Scrollbars)({
-	overflow: "hidden",
-	"&::-webkit-scrollbar": {
-		width: 0,
-		height: 0,
-	},
-});
 export const CustomScrollbars = forwardRef<
 	Scrollbars,
 	{
