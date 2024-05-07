@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/blib-la/captn/compare/v0.27.0...v0.28.0) (2024-05-07)
+
+
+### Features
+
+* **@captn/react:** add theme and language hooks ([a24446d](https://github.com/blib-la/captn/commit/a24446d58bf84543904ca0cc352c1df2e099915f))
+
+
+
+
+
 # [0.27.0](https://github.com/blib-la/captn/compare/v0.26.3...v0.27.0) (2024-05-07)
 
 
