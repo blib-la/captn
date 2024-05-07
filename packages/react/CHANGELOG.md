@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/blib-la/captn/compare/v0.26.3...v0.27.0) (2024-05-07)
+
+
+### Features
+
+* **@captn/react:** add exports in index ([5111d72](https://github.com/blib-la/captn/commit/5111d7206df81b0dc867f17c7e5900c538814624))
+
+
+
+
+
 ## [0.26.3](https://github.com/blib-la/captn/compare/v0.26.2...v0.26.3) (2024-05-07)
 
 **Note:** Version bump only for package @captn/react
