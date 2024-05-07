@@ -128,7 +128,7 @@ This version maintains a concise structure while adjusting the flow to better su
 `;
 }
 
-const newFolder = path.join(CWD, name);
+const newFolder = path.join(CWD, name).replaceAll("\\", "/");
 
 try {
 	const username = await currentGitUserName();
