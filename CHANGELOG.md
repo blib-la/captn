@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/blib-la/captn/compare/v0.28.1...v0.29.0) (2024-05-08)
+
+
+### Features
+
+* **@captn/react:** allow unknown payload in useUnload ([0b9103e](https://github.com/blib-la/captn/commit/0b9103e9ec43746333aa06ffc988ad62f4f63a41))
+
+
+
+
+
 ## [0.28.1](https://github.com/blib-la/captn/compare/v0.28.0...v0.28.1) (2024-05-07)
 
 **Note:** Version bump only for package captn
