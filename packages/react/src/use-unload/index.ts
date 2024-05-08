@@ -10,7 +10,7 @@ import { useSDK } from "../use-sdk";
  * @param {string} appId - A unique identifier for the application or SDK instance, used to
  *                         configure the underlying `useSDK` hook for IPC communication.
  * @param {string} action - The action type of the message to be sent on the "beforeunload" event.
- * @param {string} [payload=appId] - The payload to be sent with the message. Defaults to the `appId`
+ * @param {unknown} [payload=appId] - The payload to be sent with the message. Defaults to the `appId`
  *                                   if no payload is provided.
  *
  * @example
@@ -32,8 +32,8 @@ import { useSDK } from "../use-sdk";
  *   operations to complete (e.g., network requests), and browsers might limit certain actions
  *   during this event.
  */
-export function useUnload(appId: string, action: string, payload = appId) {
-	const { send } = useSDK<unknown, string>(appId, {});
+export function useUnload(appId: string, action: string, payload: unknown = appId) {
+	const { send } = useSDK(appId, {});
 	useEffect(() => {
 		function beforeUnload() {
 			send({ action, payload });
