@@ -1,4 +1,5 @@
 import { useRequiredDownloads } from "@captn/react/use-required-downloads";
+import { RequiredDownload } from "@captn/utils/types";
 import CheckIcon from "@mui/icons-material/Check";
 import DownloadIcon from "@mui/icons-material/Download";
 import Box from "@mui/joy/Box";
@@ -43,13 +44,7 @@ export function RequiredDownloads({
 	note?: string;
 	disableTypography?: boolean;
 	downloadLabel?(doneCount: number, requiredCount: number): string;
-	allRequiredDownloads: {
-		label: string;
-		id: string;
-		source: string;
-		destination: string;
-		unzip?: boolean;
-	}[];
+	allRequiredDownloads: RequiredDownload[];
 }) {
 	const { download, isCompleted, isDownloading, percent, downloadCount, requiredDownloads } =
 		useRequiredDownloads(allRequiredDownloads);
