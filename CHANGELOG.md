@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/blib-la/captn/compare/v0.29.0...v0.30.0) (2024-05-15)
+
+
+### Features
+
+* **@captn/joy:** update to new type ([1a2981e](https://github.com/blib-la/captn/commit/1a2981ec69bd619c083238bcecb81d1b32317752))
+* **@captn/utils:** add fileName to download item ([e3b5dac](https://github.com/blib-la/captn/commit/e3b5dac29a88c8feefee25c5636844c4d542ac06))
+
+
+
+
+
 # [0.29.0](https://github.com/blib-la/captn/compare/v0.28.1...v0.29.0) (2024-05-08)
 
 
