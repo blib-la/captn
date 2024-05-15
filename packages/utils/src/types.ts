@@ -1,4 +1,4 @@
-import { DownloadItem } from "@captn/utils/constants";
+import { DownloadState } from "@captn/utils/constants";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import type { Schemas as QdrantSchemas } from "@qdrant/js-client-rest";
@@ -165,6 +165,56 @@ declare global {
 		 */
 		ipc: IPCHandlers;
 	}
+}
+
+/**
+ * Represents an item to be downloaded, including its source, destination, and other metadata.
+ */
+export interface DownloadItem {
+	/**
+	 * Unique identifier for each download request.
+	 */
+	id: string;
+
+	/**
+	 * The URL of the file to be downloaded.
+	 */
+	source: string;
+
+	/**
+	 * Local path where the file should be saved.
+	 */
+	destination: string;
+
+	/**
+	 * Name of the downloaded or unpacked file
+	 */
+	fileName: string;
+
+	/**
+	 * A user-friendly name or label for the download item, for UI display purposes.
+	 */
+	label: string;
+
+	/**
+	 * Time when the download request is sent from the client, represented as a Unix timestamp.
+	 */
+	createdAt: number;
+
+	/**
+	 * MIME type of the file being downloaded, if known beforehand. Optional.
+	 */
+	mimeType?: string;
+
+	/**
+	 * Whether to automatically unzip the file when download completes. Optional.
+	 */
+	unzip?: boolean;
+
+	/**
+	 * Current state of the download. Optional.
+	 */
+	state?: DownloadState;
 }
 
 export type RequiredDownload = Except<DownloadItem, "createdAt">;
