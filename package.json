@@ -36,6 +36,7 @@
     "release:beta": "lerna publish --canary --preid beta --pre-dist-tag beta",
     "spj": "npx sort-package-json@latest \"package.json\" \"packages/*/package.json\"",
     "test": "jest",
+    "typecheck": "tsc --noEmit",
     "watch": "npx lerna run watch --parallel"
   },
   "dependencies": {

@@ -9,12 +9,14 @@ describe("useRequiredDownloads", () => {
 			id: "download-1",
 			source: "https://example.com/file1.zip",
 			destination: "path/to/a",
+			fileName: "example.jpg",
 			label: "File 1",
 		},
 		{
 			id: "download-2",
 			source: "https://example.com/file2.zip",
 			destination: "path/to/b",
+			fileName: "example.jpg",
 			label: "File 2",
 		},
 	];
@@ -27,6 +29,9 @@ describe("useRequiredDownloads", () => {
 				send: jest.fn(),
 				on: jest.fn(() => () => {}),
 				inventoryStore: {
+					get: jest.fn().mockResolvedValue([]),
+				},
+				downloadStore: {
 					get: jest.fn().mockResolvedValue([]),
 				},
 			},
