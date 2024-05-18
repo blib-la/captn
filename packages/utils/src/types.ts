@@ -136,6 +136,14 @@ export interface IPCHandlers {
 	getFilePath(): Promise<string>;
 
 	/**
+	 * Gets the path for a registered key
+	 *
+	 * @param {string} key - The name of the registered key
+	 * @returns a sting with the absolute path for the registered key
+	 */
+	getPath(key: string): Promise<string>;
+
+	/**
 	 * Sends a message to a specified channel. Useful for sending data or notifications to other
 	 * processes or the main process.
 	 *
@@ -187,7 +195,7 @@ export interface DownloadItem {
 	destination: string;
 
 	/**
-	 * Name of the downloaded or unpacked file
+	 * Name of the downloaded or unpacked file.
 	 */
 	fileName: string;
 
@@ -210,6 +218,11 @@ export interface DownloadItem {
 	 * Whether to automatically unzip the file when download completes. Optional.
 	 */
 	unzip?: boolean;
+
+	/**
+	 * Whether the file should be flattened in the directory. If true, the fileName will be used for files or folders. Optional.
+	 */
+	flat?: boolean;
 
 	/**
 	 * Current state of the download. Optional.
