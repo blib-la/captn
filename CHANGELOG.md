@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/blib-la/captn/compare/v0.30.0...v0.31.0) (2024-05-18)
+
+
+### Features
+
+* **@captn/utils:** update types for DownloadItem ([8413f79](https://github.com/blib-la/captn/commit/8413f7960d6c816c581c17ea37d47de7335e8848))
+
+
+
+
+
 # [0.30.0](https://github.com/blib-la/captn/compare/v0.29.0...v0.30.0) (2024-05-15)
 
 

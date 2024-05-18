@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/blib-la/captn/compare/v0.30.0...v0.31.0) (2024-05-18)
+
+**Note:** Version bump only for package @captn/theme
+
+
+
+
+
 # [0.30.0](https://github.com/blib-la/captn/compare/v0.29.0...v0.30.0) (2024-05-15)
 
 **Note:** Version bump only for package @captn/theme
