@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.1](https://github.com/blib-la/captn/compare/v0.32.0...v0.32.1) (2024-05-24)
+
+
+### Bug Fixes
+
+* **@captn/react:** type of generate is wrong ([b1139bf](https://github.com/blib-la/captn/commit/b1139bfeb896de533169851700f3a182b6644e3b))
+
+
+
+
+
 # [0.32.0](https://github.com/blib-la/captn/compare/v0.31.0...v0.32.0) (2024-05-24)
 
 
