@@ -437,3 +437,17 @@ export type ComfyUIUpdate =
 	| ComfyUICached
 	| ComfyUIExecuting
 	| ComfyUIExecuted<ImageOutput>;
+
+/**
+ * Represents a basic type for ComfyUI nodes
+ */
+interface Node<T extends Record<string, unknown> = Record<string, unknown>> {
+	inputs: T;
+	class_type: string;
+	meta?: Record<string, unknown>;
+}
+
+/**
+ * Represents the node chain as a mapping from string to Node.
+ */
+export type NodeChain = Record<string, Node>;

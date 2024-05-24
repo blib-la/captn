@@ -1,4 +1,4 @@
-import { ComfyUIUpdate } from "@captn/utils/types";
+import { ComfyUIUpdate, NodeChain } from "@captn/utils/types";
 import { useCallback, useEffect, useState } from "react";
 
 import { StableDiffusion, useInventory } from "../use-inventory";
@@ -88,7 +88,7 @@ export function useComfyUI(
 	});
 
 	const generate = useCallback(
-		(workflow: string) => {
+		(workflow: NodeChain) => {
 			setIsGenerating(true);
 
 			send({

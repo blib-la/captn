@@ -3,7 +3,6 @@ import { renderHook, act } from "@testing-library/react";
 import { useComfyUI } from "../use-comfyui";
 import { useInventory } from "../use-inventory";
 import { useSDK } from "../use-sdk";
-import { useUnload } from "../use-unload";
 
 jest.mock("../use-inventory");
 jest.mock("../use-sdk");
@@ -12,7 +11,6 @@ jest.mock("../use-unload");
 describe("useComfyUI", () => {
 	const mockUseInventory = useInventory as jest.Mock;
 	const mockUseSDK = useSDK as jest.Mock;
-	const mockUseUnload = useUnload as jest.Mock;
 
 	beforeEach(() => {
 		jest.clearAllMocks();
@@ -54,14 +52,14 @@ describe("useComfyUI", () => {
 		const { result } = renderHook(() => useComfyUI("appId", onGenerated));
 
 		act(() => {
-			result.current.generate("workflow_string_here");
+			result.current.generate({ "1": { inputs: {}, class_type: "Test" } });
 		});
 
 		expect(result.current.isGenerating).toBe(true);
 		expect(send).toHaveBeenCalledWith({
 			action: "comfyui:queue",
 			payload: {
-				workflow: "workflow_string_here",
+				workflow: { "1": { inputs: {}, class_type: "Test" } },
 			},
 		});
 	});
