@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/blib-la/captn/compare/v0.32.1...v0.33.0) (2024-05-24)
+
+
+### Features
+
+* **@captn/react:** improve use-seed hook ([4c0257b](https://github.com/blib-la/captn/commit/4c0257b9bd66920ce8af3d1614c4876c01ffe37f))
+
+
+
+
+
 ## [0.32.1](https://github.com/blib-la/captn/compare/v0.32.0...v0.32.1) (2024-05-24)
 
 
