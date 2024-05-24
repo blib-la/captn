@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/blib-la/captn/compare/v0.31.0...v0.32.0) (2024-05-24)
+
+
+### Features
+
+* **@captn/react:** add comfyui helpers ([83ac428](https://github.com/blib-la/captn/commit/83ac4281e1415c6e020aea7c945bb20320ebd667))
+
+
+
+
+
 # [0.31.0](https://github.com/blib-la/captn/compare/v0.30.0...v0.31.0) (2024-05-18)
 
 **Note:** Version bump only for package @captn/react
