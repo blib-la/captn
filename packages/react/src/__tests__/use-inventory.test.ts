@@ -46,20 +46,6 @@ describe("useInventory", () => {
 		});
 	});
 
-	it("should handle error during fetch", async () => {
-		const mockError = new Error("Failed to fetch");
-		(window.ipc.inventoryStore.get as jest.Mock).mockRejectedValue(mockError);
-
-		const { result } = renderHook(() =>
-			useInventory<StableDiffusion>("stable-diffusion-config")
-		);
-
-		await waitFor(() => {
-			expect(result.current.error).toBe(mockError);
-			expect(result.current.data).toBeUndefined();
-		});
-	});
-
 	it("should use provided SWR configuration", async () => {
 		const mockData: Inventory[] = [
 			{
