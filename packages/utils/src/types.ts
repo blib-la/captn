@@ -136,12 +136,26 @@ export interface IPCHandlers {
 	getFilePath(): Promise<string>;
 
 	/**
-	 * Gets the path for a registered key
+	 * Copies an image with additional metadata to the images folder and upserts it in the vector
+	 * store to allow retrieval.
 	 *
-	 * @param {string} key - The name of the registered key
-	 * @returns a sting with the absolute path for the registered key
+	 * @param {Object} options - The options for copying the file.
+	 * @param {string} options.source - The source path of the file to be copied.
+	 * @param {string} options.destination - The destination path where the file should be copied.
+	 * @param {Object} [options.metadata] - Optional metadata to be associated with the file.
+	 * @param {string} [options.metadata.description] - An optional description for the file.
+	 * @param {string} [options.metadata.prompt] - (unused) An optional prompt associated with the file.
+	 * @param {string} [options.metadata.caption] - (unused) An optional caption for the file.
+	 *
+	 * @returns {Promise<void | { operation_id?: number | null; status: "acknowledged" | "completed" }[]>} - A promise that resolves when the operation is complete. If successful, it returns an array of objects containing the operation ID and status.
 	 */
-	getPath(key: string): Promise<string>;
+	copyFileWithMetadata(options: {
+		source: string;
+		destination: string;
+		metadata?: { prompt?: string; description?: string; caption?: string };
+	}): Promise<
+		void | { operation_id?: number | null | undefined; status: "acknowledged" | "completed" }[]
+	>;
 
 	/**
 	 * Sends a message to a specified channel. Useful for sending data or notifications to other
@@ -343,3 +357,83 @@ export type SearchOptions = Partial<QdrantSchemas["SearchRequest"]>;
  * as needed.
  */
 export type ScrollOptions = Partial<QdrantSchemas["ScrollRequest"]>;
+
+/**
+ * Represents the output of an image generation process.
+ *
+ * @typedef {Object} ImageOutput
+ * @property {Object[]} images - Array of generated images.
+ * @property {string} images.filename - The filename of the generated image.
+ * @property {string} images.subfolder - The subfolder where the generated image is stored.
+ */
+type ImageOutput = {
+	images: { filename: string; subfolder: string }[];
+};
+
+/**
+ * Represents the structure of a successful execution response from ComfyUI.
+ *
+ * @interface ComfyUIExecuted
+ * @template T - A generic type extending a record with string keys and unknown values, defaults to an empty record.
+ * @property {string} type - The type of the response, always "executed" for this interface.
+ * @property {Object} data - The data object containing the execution output.
+ * @property {T} data.output - The output of the execution.
+ */
+export interface ComfyUIExecuted<T extends Record<string, unknown> = Record<string, unknown>> {
+	type: "executed";
+	data: {
+		output: T;
+	};
+}
+
+/**
+ * Represents the structure of an execution-in-progress response from ComfyUI.
+ *
+ * @interface ComfyUIExecuting
+ * @property {string} type - The type of the response, always "executing" for this interface.
+ */
+export interface ComfyUIExecuting {
+	type: "executing";
+}
+
+/**
+ * Represents the structure of a cached execution response from ComfyUI.
+ *
+ * @interface ComfyUICached
+ * @property {string} type - The type of the response, always "execution_cached" for this interface.
+ */
+export interface ComfyUICached {
+	type: "execution_cached";
+}
+
+/**
+ * Represents the structure of a status update response from ComfyUI.
+ *
+ * @interface ComfyUIStatus
+ * @property {string} type - The type of the response, always "status" for this interface.
+ * @property {Object} data - The data object containing the status information.
+ * @property {Object} data.status - The status information object.
+ * @property {Object} data.status.exec_info - The execution information object.
+ * @property {number} data.status.exec_info.queue_remaining - The number of remaining items in the execution queue.
+ */
+export interface ComfyUIStatus {
+	type: "status";
+	data: {
+		status: {
+			exec_info: {
+				queue_remaining: number;
+			};
+		};
+	};
+}
+
+/**
+ * Represents a union type for all possible update responses from ComfyUI.
+ *
+ * @typedef {ComfyUIStatus | ComfyUICached | ComfyUIExecuting | ComfyUIExecuted<ImageOutput>} ComfyUIUpdate
+ */
+export type ComfyUIUpdate =
+	| ComfyUIStatus
+	| ComfyUICached
+	| ComfyUIExecuting
+	| ComfyUIExecuted<ImageOutput>;

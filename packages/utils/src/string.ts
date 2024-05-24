@@ -88,3 +88,26 @@ export function localFile(
 ) {
 	return `${localProtocol}://${filePath}`;
 }
+
+/**
+ * Replaces a placeholder for a prompt within a given template string with the specified prompt text.
+ *
+ * This function searches for a placeholder in the format `{ prompt }` within the provided template string
+ * and replaces it with the provided prompt text. The replacement is case-insensitive and matches the
+ * placeholder regardless of surrounding whitespace.
+ *
+ * @param {string} prompt - The text to insert into the template string where the placeholder `{ prompt }` is found.
+ * @param {string} template - The template string containing the placeholder `{ prompt }` to be replaced.
+ * @returns {string} - The modified template string with the `{ prompt }` placeholder replaced by the specified prompt text.
+ *
+ * @example
+ * ```js
+ * const template = "a photo of { prompt }, highres, bokeh";
+ * const prompt = "a cute puppy playing with a red ball";
+ * injectPrompt(prompt, template);
+ * // Returns: "a photo of a cute puppy playing with a red ball, highres, bokeh"
+ * ```
+ */
+export function injectPrompt(prompt: string, template: string) {
+	return template.replace(/{(\s+)?prompt(\s+)?}/i, prompt);
+}

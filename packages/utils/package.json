@@ -42,6 +42,16 @@
       "import": "./dist/esm/constants.js",
       "require": "./dist/cjs/constants.js",
       "types": "./dist/types/constants.d.ts"
+    },
+    "./number": {
+      "import": "./dist/esm/number.js",
+      "require": "./dist/cjs/number.js",
+      "types": "./dist/types/number.d.ts"
+    },
+    "./resolution": {
+      "import": "./dist/esm/resolution.js",
+      "require": "./dist/cjs/resolution.js",
+      "types": "./dist/types/resolution.d.ts"
     }
   },
   "main": "./dist/cjs/index.js",
