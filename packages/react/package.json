@@ -33,6 +33,26 @@
       "require": "./dist/cjs/use-captain-action/index.js",
       "import": "./dist/esm/use-captain-action/index.js"
     },
+    "./use-comfyui": {
+      "types": "./dist/types/use-comfyui/index.d.ts",
+      "require": "./dist/cjs/use-comfyui/index.js",
+      "import": "./dist/esm/use-comfyui/index.js"
+    },
+    "./use-history-state": {
+      "types": "./dist/types/use-history-state/index.d.ts",
+      "require": "./dist/cjs/use-history-state/index.js",
+      "import": "./dist/esm/use-history-state/index.js"
+    },
+    "./use-inventory": {
+      "types": "./dist/types/use-inventory/index.d.ts",
+      "require": "./dist/cjs/use-inventory/index.js",
+      "import": "./dist/esm/use-inventory/index.js"
+    },
+    "./use-seed": {
+      "types": "./dist/types/use-seed/index.d.ts",
+      "require": "./dist/cjs/use-seed/index.js",
+      "import": "./dist/esm/use-seed/index.js"
+    },
     "./use-resettable-state": {
       "types": "./dist/types/use-resettable-state/index.d.ts",
       "require": "./dist/cjs/use-resettable-state/index.js",
@@ -91,7 +111,8 @@
     "dot-prop": "^8.0.2",
     "lodash.isequal": "^4.5.0",
     "use-debounce": "^10.0.0",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/lodash.isequal": "^4.5.8",

@@ -95,7 +95,8 @@ export function useSDK<T, R>(
 	channel: string;
 	send(message: SDKMessage<T>): void;
 	getFilePath: IPCHandlers["getFilePath"];
-	getDirectoryPath: IPCHandlers["getFilePath"];
+	getDirectoryPath: IPCHandlers["getDirectoryPath"];
+	copyFileWithMetadata: IPCHandlers["copyFileWithMetadata"];
 	readFile: IPCHandlers["readFile"];
 	writeFile: IPCHandlers["writeFile"];
 } {
@@ -117,6 +118,14 @@ export function useSDK<T, R>(
 		[appId]
 	);
 
+	const copyFileWithMetadata = useCallback(
+		(options: {
+			source: string;
+			destination: string;
+			metadata?: { prompt?: string; description?: string; caption?: string };
+		}) => window.ipc.copyFileWithMetadata(options),
+		[]
+	);
 	const getFilePath = useCallback(() => window.ipc.getFilePath(), []);
 	const getDirectoryPath = useCallback(() => window.ipc.getDirectoryPath(), []);
 	const readFile = useCallback(
@@ -154,5 +163,13 @@ export function useSDK<T, R>(
 		}
 	}, [channel]);
 
-	return { channel, send, getFilePath, getDirectoryPath, readFile, writeFile };
+	return {
+		channel,
+		send,
+		getFilePath,
+		getDirectoryPath,
+		readFile,
+		writeFile,
+		copyFileWithMetadata,
+	};
 }
