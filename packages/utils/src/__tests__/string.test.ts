@@ -1,6 +1,6 @@
 import { LOCAL_PROTOCOL } from "@captn/utils/constants";
 
-import { getActionArguments, localFile } from "../string";
+import { getActionArguments, injectPrompt, localFile } from "../string";
 
 describe("getActionArguments", () => {
 	it("parses command and captainId", () => {
@@ -70,5 +70,49 @@ describe("localFile", () => {
 		const expectedUri = `${defaultProtocol}://${absoluteFilePath}`;
 		const uri = localFile(absoluteFilePath);
 		expect(uri).toBe(expectedUri);
+	});
+});
+
+describe("injectPrompt", () => {
+	it("should replace the placeholder with the specified prompt text", () => {
+		const template = "a photo of { prompt }, highres, bokeh";
+		const prompt = "a cute puppy playing with a red ball";
+		const result = injectPrompt(prompt, template);
+		expect(result).toBe("a photo of a cute puppy playing with a red ball, highres, bokeh");
+	});
+
+	it("should replace the placeholder regardless of surrounding whitespace", () => {
+		const template = "a photo of {   prompt   }, highres, bokeh";
+		const prompt = "a cute puppy playing with a red ball";
+		const result = injectPrompt(prompt, template);
+		expect(result).toBe("a photo of a cute puppy playing with a red ball, highres, bokeh");
+	});
+
+	it("should replace the placeholder case-insensitively", () => {
+		const template = "a photo of { PROMPT }, highres, bokeh";
+		const prompt = "a cute puppy playing with a red ball";
+		const result = injectPrompt(prompt, template);
+		expect(result).toBe("a photo of a cute puppy playing with a red ball, highres, bokeh");
+	});
+
+	it("should not change the template if no placeholder is found", () => {
+		const template = "a photo of a landscape, highres, bokeh";
+		const prompt = "a cute puppy playing with a red ball";
+		const result = injectPrompt(prompt, template);
+		expect(result).toBe("a photo of a landscape, highres, bokeh");
+	});
+
+	it("should handle empty prompt correctly", () => {
+		const template = "a photo of { prompt }, highres, bokeh";
+		const prompt = "";
+		const result = injectPrompt(prompt, template);
+		expect(result).toBe("a photo of , highres, bokeh");
+	});
+
+	it("should handle empty template correctly", () => {
+		const template = "";
+		const prompt = "a cute puppy playing with a red ball";
+		const result = injectPrompt(prompt, template);
+		expect(result).toBe("");
 	});
 });
