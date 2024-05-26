@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/blib-la/captn/compare/v0.33.0...v0.34.0) (2024-05-26)
+
+
+### Bug Fixes
+
+* **create-captain-app:** new types cause ts-error ([3796d05](https://github.com/blib-la/captn/commit/3796d05f66430a6e127a9ede69c2daca9707795c))
+
+
+
+
+
 # [0.33.0](https://github.com/blib-la/captn/compare/v0.32.1...v0.33.0) (2024-05-24)
 
 **Note:** Version bump only for package create-captain-app
