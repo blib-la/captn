@@ -13,6 +13,7 @@ import matter from "gray-matter";
 import humanizeString from "humanize-string";
 import YAML from "js-yaml";
 import meow from "meow";
+import { Except } from "type-fest";
 import { v4 } from "uuid";
 
 import { downloadAndExtractRepo, getRepoInfo, hasRepo } from "./template.js";
@@ -81,7 +82,7 @@ export async function currentGitUserEmail() {
 	}
 }
 
-export function createCaptainMd(data: VectorStoreDocument["payload"]) {
+export function createCaptainMd(data: Except<VectorStoreDocument["payload"], "content">) {
 	return `---
 ${YAML.dump(data)}
 ---
