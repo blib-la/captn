@@ -291,6 +291,11 @@ export type VectorStoreDocument = {
 		type: string;
 
 		/**
+		 * The content that was used to index the document. This might be a snippet if the original content was soo long and split up into smaller parts.
+		 */
+		content: string;
+
+		/**
 		 * An optional URL or path to an icon that represents the document or its action visually. Used in UI elements to enhance user experience.
 		 */
 		icon?: string;
