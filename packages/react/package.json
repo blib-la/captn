@@ -1,6 +1,6 @@
 {
   "name": "@captn/react",
-  "version": "0.35.0",
+  "version": "0.36.0",
   "homepage": "https://github.com/blib-la/captn/",
   "bugs": {
     "url": "https://github.com/blib-la/captn/issues"
@@ -107,7 +107,7 @@
     "watch:types": "tsc --watch --project tsconfig.production.types.json"
   },
   "dependencies": {
-    "@captn/utils": "^0.35.0",
+    "@captn/utils": "^0.36.0",
     "dot-prop": "^8.0.2",
     "lodash.isequal": "^4.5.0",
     "swr": "^2.2.5",

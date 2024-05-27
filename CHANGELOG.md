@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/blib-la/captn/compare/v0.35.0...v0.36.0) (2024-05-27)
+
+
+### Features
+
+* **@captn/react:** send workflow in comfy updates ([586848f](https://github.com/blib-la/captn/commit/586848f94d17af002b150cd26e9aa81736c4e945))
+
+
+
+
+
 # [0.35.0](https://github.com/blib-la/captn/compare/v0.34.0...v0.35.0) (2024-05-27)
 
 
