@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/blib-la/captn/compare/v0.38.0...v0.39.0) (2024-05-27)
+
+
+### Features
+
+* **@captn/react:** allow mutating vector search and scroll ([46833b4](https://github.com/blib-la/captn/commit/46833b4da1151aea5f978fd10a629674560e0939))
+
+
+
+
+
 # [0.38.0](https://github.com/blib-la/captn/compare/v0.37.0...v0.38.0) (2024-05-27)
 
 
