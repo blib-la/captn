@@ -1,5 +1,5 @@
 import { APP_MESSAGE_KEY } from "@captn/utils/constants";
-import { IPCHandlers } from "@captn/utils/types";
+import { ComfyUIFileMetaData, IPCHandlers } from "@captn/utils/types";
 import { useCallback, useEffect, useRef } from "react";
 
 import { SDKMessage } from "../types";
@@ -119,11 +119,8 @@ export function useSDK<T, R>(
 	);
 
 	const copyFileWithMetadata = useCallback(
-		(options: {
-			source: string;
-			destination: string;
-			metadata?: { prompt?: string; description?: string; caption?: string };
-		}) => window.ipc.copyFileWithMetadata(options),
+		(options: { source: string; destination: string; metadata?: ComfyUIFileMetaData }) =>
+			window.ipc.copyFileWithMetadata(options),
 		[]
 	);
 	const getFilePath = useCallback(() => window.ipc.getFilePath(), []);
