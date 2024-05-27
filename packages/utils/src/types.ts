@@ -144,15 +144,25 @@ export interface IPCHandlers {
 	 * @param {string} options.destination - The destination path where the file should be copied.
 	 * @param {Object} [options.metadata] - Optional metadata to be associated with the file.
 	 * @param {string} [options.metadata.description] - An optional description for the file.
-	 * @param {string} [options.metadata.prompt] - (unused) An optional prompt associated with the file.
-	 * @param {string} [options.metadata.caption] - (unused) An optional caption for the file.
+	 * @param {string} [options.metadata.prompt] - An optional prompt associated with the file.
+	 * @param {string} [options.metadata.negatrivePrompt] - An optional negative prompt associated with the file.
+	 * @param {string} [options.metadata.workflow] - An optional workflow associated with the file.
+	 * @param {string} [options.metadata.tags] - Optional tags associated with the file.
+	 * @param {string} [options.metadata.caption] - An optional caption for the file.
 	 *
 	 * @returns {Promise<void | { operation_id?: number | null; status: "acknowledged" | "completed" }[]>} - A promise that resolves when the operation is complete. If successful, it returns an array of objects containing the operation ID and status.
 	 */
 	copyFileWithMetadata(options: {
 		source: string;
 		destination: string;
-		metadata?: { prompt?: string; description?: string; caption?: string };
+		metadata?: {
+			prompt?: string;
+			negativePrompt?: string;
+			workflow?: string;
+			tags?: string;
+			description?: string;
+			caption?: string;
+		};
 	}): Promise<
 		void | { operation_id?: number | null | undefined; status: "acknowledged" | "completed" }[]
 	>;
