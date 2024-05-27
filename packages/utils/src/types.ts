@@ -388,6 +388,7 @@ export interface ComfyUIExecuted<T extends Record<string, unknown> = Record<stri
 	type: "executed";
 	data: {
 		output: T;
+		prompt_id: string;
 	};
 }
 
@@ -399,6 +400,9 @@ export interface ComfyUIExecuted<T extends Record<string, unknown> = Record<stri
  */
 export interface ComfyUIExecuting {
 	type: "executing";
+	data: {
+		prompt_id: string;
+	};
 }
 
 /**
@@ -409,6 +413,9 @@ export interface ComfyUIExecuting {
  */
 export interface ComfyUICached {
 	type: "execution_cached";
+	data: {
+		prompt_id: string;
+	};
 }
 
 /**
@@ -429,6 +436,7 @@ export interface ComfyUIStatus {
 				queue_remaining: number;
 			};
 		};
+		prompt_id: string;
 	};
 }
 

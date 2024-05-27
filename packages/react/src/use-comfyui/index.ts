@@ -1,5 +1,5 @@
 import { ComfyUIUpdate, NodeChain } from "@captn/utils/types";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { StableDiffusion, useInventory } from "../use-inventory";
 import { useSDK } from "../use-sdk";
@@ -43,12 +43,16 @@ import { useUnload } from "../use-unload";
  */
 export function useComfyUI(
 	appId: string,
-	onGenerated: (_image: string, meta: { filename: string; subfolder: string }) => void
+	onGenerated: (
+		_image: string,
+		meta: { filename: string; subfolder: string; prompt: string }
+	) => void
 ) {
 	const [queueSize, setQueueSize] = useState(0);
 	const [isGenerating, setIsGenerating] = useState(false);
 	const [image, setImage] = useState<string | null>(null);
 	const { data: inventoryData } = useInventory<StableDiffusion>("stable-diffusion");
+	const history = useRef<Record<string, string>>({});
 
 	const loras = inventoryData?.loras ?? [];
 	const checkpoints = inventoryData?.checkpoints ?? [];
@@ -58,6 +62,19 @@ export function useComfyUI(
 	const { send } = useSDK<unknown, object>(appId, {
 		async onMessage(message) {
 			switch (message.action) {
+				case "comfyui:promptId": {
+					try {
+						const { promptId, workflow } = message.payload as unknown as {
+							promptId: string;
+							workflow: NodeChain;
+						};
+						history.current[promptId] = workflow.prompt.inputs.text as string;
+						console.log(history);
+					} catch {}
+
+					break;
+				}
+
 				case "comfyui:update": {
 					const { data, comfyUITemporaryPath } = message.payload as {
 						data: ComfyUIUpdate;
@@ -68,13 +85,15 @@ export function useComfyUI(
 						setIsGenerating(data.data.status.exec_info.queue_remaining > 0);
 					} else if (data.type === "executed") {
 						const { filename, subfolder } = data.data.output.images[0];
+						const promptId = data.data.prompt_id;
+						const prompt = history.current[promptId];
 						const temporaryImage =
 							`${comfyUITemporaryPath}/${subfolder}/${filename}`.replaceAll(
 								/\?+/g,
 								"/"
 							);
 						setImage(temporaryImage);
-						onGenerated(temporaryImage, { filename, subfolder });
+						onGenerated(temporaryImage, { filename, subfolder, prompt });
 					}
 
 					break;
