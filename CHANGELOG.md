@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/blib-la/captn/compare/v0.34.0...v0.35.0) (2024-05-27)
+
+
+### Features
+
+* **@captn/react:** send prompt in comfy updates ([c5ac10c](https://github.com/blib-la/captn/commit/c5ac10c71cd76fa7885ca341f9ca8fbf1a5638cc))
+
+
+
+
+
 # [0.34.0](https://github.com/blib-la/captn/compare/v0.33.0...v0.34.0) (2024-05-26)
 
 
