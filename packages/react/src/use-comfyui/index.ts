@@ -45,14 +45,14 @@ export function useComfyUI(
 	appId: string,
 	onGenerated: (
 		_image: string,
-		meta: { filename: string; subfolder: string; prompt: string }
+		meta: { filename: string; subfolder: string; workflow: NodeChain }
 	) => void
 ) {
 	const [queueSize, setQueueSize] = useState(0);
 	const [isGenerating, setIsGenerating] = useState(false);
 	const [image, setImage] = useState<string | null>(null);
 	const { data: inventoryData } = useInventory<StableDiffusion>("stable-diffusion");
-	const history = useRef<Record<string, string>>({});
+	const history = useRef<Record<string, NodeChain>>({});
 
 	const loras = inventoryData?.loras ?? [];
 	const checkpoints = inventoryData?.checkpoints ?? [];
@@ -68,8 +68,7 @@ export function useComfyUI(
 							promptId: string;
 							workflow: NodeChain;
 						};
-						history.current[promptId] = workflow.prompt.inputs.text as string;
-						console.log(history);
+						history.current[promptId] = workflow;
 					} catch {}
 
 					break;
@@ -86,14 +85,17 @@ export function useComfyUI(
 					} else if (data.type === "executed") {
 						const { filename, subfolder } = data.data.output.images[0];
 						const promptId = data.data.prompt_id;
-						const prompt = history.current[promptId];
+						// Get the stored workflow and remove ith from the history
+						const { [promptId]: workflow, ...rest } = history.current;
+						history.current = rest;
+
 						const temporaryImage =
 							`${comfyUITemporaryPath}/${subfolder}/${filename}`.replaceAll(
-								/\?+/g,
+								/\\+/g,
 								"/"
 							);
 						setImage(temporaryImage);
-						onGenerated(temporaryImage, { filename, subfolder, prompt });
+						onGenerated(temporaryImage, { filename, subfolder, workflow });
 					}
 
 					break;
