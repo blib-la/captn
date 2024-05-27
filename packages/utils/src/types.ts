@@ -144,9 +144,9 @@ export interface IPCHandlers {
 	 * @param {string} options.destination - The destination path where the file should be copied.
 	 * @param {Object} [options.metadata] - Optional metadata to be associated with the file.
 	 * @param {string} [options.metadata.description] - An optional description for the file.
-	 * @param {string} [options.metadata.prompt] - An optional prompt associated with the file.
-	 * @param {string} [options.metadata.negatrivePrompt] - An optional negative prompt associated with the file.
-	 * @param {string} [options.metadata.workflow] - An optional workflow associated with the file.
+	 * @param {string} [options.metadata.negativePrompt] - An optional negative prompt associated with the file.
+	 * @param {string} [options.metadata.positivePrompt] - An optional positive prompt associated with the file.
+	 * @param {string} [options.metadata.prompt] - An optional prompt/workflow associated with the file.
 	 * @param {string} [options.metadata.tags] - Optional tags associated with the file.
 	 * @param {string} [options.metadata.caption] - An optional caption for the file.
 	 *
@@ -155,14 +155,7 @@ export interface IPCHandlers {
 	copyFileWithMetadata(options: {
 		source: string;
 		destination: string;
-		metadata?: {
-			prompt?: string;
-			negativePrompt?: string;
-			workflow?: string;
-			tags?: string;
-			description?: string;
-			caption?: string;
-		};
+		metadata?: ComfyUIFileMetaData;
 	}): Promise<
 		void | { operation_id?: number | null | undefined; status: "acknowledged" | "completed" }[]
 	>;
@@ -474,3 +467,31 @@ interface Node<T extends Record<string, unknown> = Record<string, unknown>> {
  * Represents the node chain as a mapping from string to Node.
  */
 export type NodeChain = Record<string, Node>;
+
+export interface ComfyUIFileMetaData {
+	/**
+	 * The comfyUI workflow.
+	 * This entry is compatible with comfyUI file drop
+	 */
+	prompt?: string;
+	/**
+	 * An additional description for the image
+	 */
+	description?: string;
+	/**
+	 * An additional caption for the image
+	 */
+	caption?: string;
+	/**
+	 * The negative prompt if used in a workflow
+	 */
+	negativePrompt?: string;
+	/**
+	 * The positive prompt if used in a workflow
+	 */
+	positivePrompt?: string;
+	/**
+	 * Additional tags for the image
+	 */
+	tags?: string;
+}
