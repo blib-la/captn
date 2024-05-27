@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/blib-la/captn/compare/v0.36.0...v0.37.0) (2024-05-27)
+
+
+### Features
+
+* **@captn/utils:** improve handlers types ([72fc7d0](https://github.com/blib-la/captn/commit/72fc7d0a6fc053ca38ef95bd16f7eebe7142eb5f))
+
+
+
+
+
 # [0.36.0](https://github.com/blib-la/captn/compare/v0.35.0...v0.36.0) (2024-05-27)
 
 **Note:** Version bump only for package @captn/utils
