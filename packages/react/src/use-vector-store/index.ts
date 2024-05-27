@@ -6,7 +6,7 @@ import {
 	VECTOR_STORE_SEARCH_RESULT_KEY,
 } from "@captn/utils/constants";
 import type { SearchOptions, ScrollOptions, VectorStoreResponse } from "@captn/utils/types";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 
 import { useObject } from "../use-object";
@@ -19,14 +19,16 @@ import { useObject } from "../use-object";
  * the search results, providing real-time feedback as the user types.
  *
  * @param {string} query The initial search query string.
- * @param {SearchOptions} [{ score_threshold }={}] The search options including score threshold to filter the results.
- * @returns {VectorStoreResponse[]} The search results as an array of VectorStoreResponse objects.
+ * @param {SearchOptions} [{ score_threshold, filter, limit }={}] The search options including score threshold, filter criteria, and limit to filter the results.
+ * @returns {{ data: VectorStoreResponse[], error: Error | null, mutate: Function }} An object containing the search results as an array of VectorStoreResponse objects, an error object if an error occurs, and a mutate function to manually trigger state updates.
  *
  * @example
  * ```ts
  * // In a React component
- * const searchResults = useVectorStore('search term', { score_threshold: 0.5 });
- * // searchResults will contain an array of search responses where each item has a score above 0.5
+ * const { data, error, mutate } = useVectorStore('search term', { score_threshold: 0.5 });
+ * // data will contain an array of search responses where each item has a score above 0.5
+ * // error will contain any error that occurred during the search
+ * // mutate can be used to manually update the search results
  * ```
  */
 export function useVectorStore(
@@ -64,7 +66,24 @@ export function useVectorStore(
 		};
 	}, []);
 
-	return { data, error };
+	const mutate = useCallback(
+		(callback?: (_previousState: VectorStoreResponse[]) => VectorStoreResponse[]) => {
+			if (callback) {
+				setData(callback);
+			} else if (query_?.trim()) {
+				// Only proceed with a non-empty query
+				window.ipc.send(VECTOR_STORE_SEARCH_KEY, {
+					query: query_,
+					options: { score_threshold, limit, filter: filter_ },
+				});
+			} else {
+				setData([]);
+			}
+		},
+		[query_, score_threshold, filter_, limit]
+	);
+
+	return { data, error, mutate };
 }
 
 /**
@@ -77,14 +96,15 @@ export function useVectorStore(
  *
  * @param {ScrollOptions} [{ order_by, with_payload, limit, filter }={}] The scrolling options
  * including ordering, payload inclusion, limit, and filtering criteria to tailor the scroll results.
- * @returns {{ data: VectorStoreResponse[], error: Error | null }} An object containing an array of
- * VectorStoreResponse objects representing the scroll results, and an error object if an error occurs.
+ * @returns {{ data: VectorStoreResponse[], error: Error | null, mutate: Function }} An object containing an array of VectorStoreResponse objects representing the scroll results, an error object if an error occurs, and a mutate function to manually trigger state updates.
  *
  * @example
  * ```ts
  * // In a React component
- * const { data, error } = useVectorScroll({ order_by: 'date', limit: 10 });
+ * const { data, error, mutate } = useVectorScroll({ order_by: 'date', limit: 10 });
  * // data will contain an array of VectorStoreResponses, each representing a chunk of the vector store data
+ * // error will contain any error that occurred during the scroll operation
+ * // mutate can be used to manually update the scroll results
  * ```
  */
 export function useVectorScroll({ order_by, with_payload, limit, filter }: ScrollOptions = {}) {
@@ -112,5 +132,18 @@ export function useVectorScroll({ order_by, with_payload, limit, filter }: Scrol
 		};
 	}, []);
 
-	return { data, error };
+	const mutate = useCallback(
+		(callback?: (_previousState: VectorStoreResponse[]) => VectorStoreResponse[]) => {
+			if (callback) {
+				setData(callback);
+			} else {
+				window.ipc.send(VECTOR_STORE_SCROLL_KEY, {
+					options: { order_by, with_payload, limit, filter: filter_ },
+				});
+			}
+		},
+		[order_by, with_payload, filter_, limit]
+	);
+
+	return { data, error, mutate };
 }

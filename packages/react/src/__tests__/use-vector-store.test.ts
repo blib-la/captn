@@ -5,7 +5,8 @@ import {
 	VECTOR_STORE_SEARCH_KEY,
 	VECTOR_STORE_SEARCH_RESULT_KEY,
 } from "@captn/utils/constants";
-import { renderHook } from "@testing-library/react";
+import { VectorStoreResponse } from "@captn/utils/types";
+import { renderHook, act } from "@testing-library/react";
 
 import { useVectorStore, useVectorScroll } from "../use-vector-store";
 
@@ -44,6 +45,50 @@ describe("useVectorStore", () => {
 			options,
 		});
 	});
+
+	it("mutate function updates the state correctly", async () => {
+		const query = "test query";
+		const options = { score_threshold: 0.5 };
+
+		const { result } = renderHook(() => useVectorStore(query, options));
+
+		const newState = [
+			{
+				id: "1",
+				score: 0.6,
+				payload: {
+					type: "image",
+					id: "some-id",
+					content: "",
+					language: "en",
+					label: "Test",
+				},
+			},
+		];
+
+		act(() => {
+			result.current.mutate(() => newState);
+		});
+
+		expect(result.current.data).toEqual(newState);
+	});
+
+	it("mutate function triggers a new search with the same query", async () => {
+		const query = "test query";
+		const options = { score_threshold: 0.5 };
+		const expectedKey = VECTOR_STORE_SEARCH_KEY;
+
+		const { result } = renderHook(() => useVectorStore(query, options));
+
+		act(() => {
+			result.current.mutate();
+		});
+
+		expect(window.ipc.send).toHaveBeenCalledWith(expectedKey, {
+			query,
+			options,
+		});
+	});
 });
 
 describe("useVectorScroll", () => {
@@ -70,6 +115,47 @@ describe("useVectorScroll", () => {
 		const expectedKey = VECTOR_STORE_SCROLL_KEY;
 
 		renderHook(() => useVectorScroll(options));
+
+		expect(window.ipc.send).toHaveBeenCalledWith(expectedKey, {
+			options,
+		});
+	});
+
+	it("mutate function updates the state correctly", async () => {
+		const options = { filter: { must: [{ key: "type", match: { value: "image" } }] } };
+
+		const { result } = renderHook(() => useVectorScroll(options));
+
+		const newState: VectorStoreResponse[] = [
+			{
+				id: "1",
+				score: 0.6,
+				payload: {
+					type: "image",
+					id: "some-id",
+					content: "",
+					language: "en",
+					label: "Test",
+				},
+			},
+		];
+
+		act(() => {
+			result.current.mutate(() => newState);
+		});
+
+		expect(result.current.data).toEqual(newState);
+	});
+
+	it("mutate function triggers a new scroll with the same options", async () => {
+		const options = { filter: { must: [{ key: "type", match: { value: "image" } }] } };
+		const expectedKey = VECTOR_STORE_SCROLL_KEY;
+
+		const { result } = renderHook(() => useVectorScroll(options));
+
+		act(() => {
+			result.current.mutate();
+		});
 
 		expect(window.ipc.send).toHaveBeenCalledWith(expectedKey, {
 			options,
