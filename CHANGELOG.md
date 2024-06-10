@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/blib-la/captn/compare/v0.40.0...v0.41.0) (2024-06-10)
+
+
+### Features
+
+* **@captn/joy:** better custom Scrollbars ([476a0f2](https://github.com/blib-la/captn/commit/476a0f28d74a4eb3f6b7d417049678d87b1fa6b2))
+
+
+
+
+
 # [0.40.0](https://github.com/blib-la/captn/compare/v0.39.0...v0.40.0) (2024-06-10)
 
 
