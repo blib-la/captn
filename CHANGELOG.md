@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/blib-la/captn/compare/v0.39.0...v0.40.0) (2024-06-10)
+
+
+### Features
+
+* **@captn/joy:** increase size of scrollbars ([0e70ea2](https://github.com/blib-la/captn/commit/0e70ea2fc8ee747a3b91b31a638f3563dfe41993))
+
+
+
+
+
 # [0.39.0](https://github.com/blib-la/captn/compare/v0.38.0...v0.39.0) (2024-05-27)
 
 
