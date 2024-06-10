@@ -1,7 +1,8 @@
 import Box from "@mui/joy/Box";
 import { styled } from "@mui/joy/styles";
 import { CSSProperties, forwardRef, ReactNode } from "react";
-import { Scrollbars } from "react-custom-scrollbars";
+import { ScrollbarProps, Scrollbars } from "react-custom-scrollbars";
+import { Except } from "type-fest";
 
 const StyledScrollbars = styled(Scrollbars)({
 	overflow: "hidden",
@@ -41,17 +42,27 @@ export const CustomScrollbars = forwardRef<
 	{
 		style?: CSSProperties;
 		children?: ReactNode;
-	}
->(({ style, children }, ref) => (
+	} & Except<ScrollbarProps, "universal" | "autoHide" | "ref" | "as">
+>(({ children, ...properties }, ref) => (
 	<StyledScrollbars
 		ref={ref}
+		{...properties}
 		autoHide
 		universal
-		thumbSize={10}
-		style={{ ...style }}
 		renderThumbVertical={properties => (
 			<Box
 				{...properties}
+				style={{ ...properties.style, width: 10 }}
+				sx={theme => ({
+					bgcolor: "text.secondary",
+					zIndex: theme.zIndex.badge + 1,
+				})}
+			/>
+		)}
+		renderThumbHorizontal={properties => (
+			<Box
+				{...properties}
+				style={{ ...properties.style, height: 10 }}
 				sx={theme => ({
 					bgcolor: "text.secondary",
 					zIndex: theme.zIndex.badge + 1,
@@ -62,3 +73,5 @@ export const CustomScrollbars = forwardRef<
 		{children}
 	</StyledScrollbars>
 ));
+
+CustomScrollbars.displayName = "CustomScrollbars";
