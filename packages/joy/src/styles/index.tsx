@@ -35,8 +35,8 @@ export const globalStyles = (
 			body: { overflowX: "hidden" },
 			"#__next": { display: "contents" },
 			"::-webkit-scrollbar": {
-				width: 6,
-				height: 6,
+				width: 10,
+				height: 10,
 			},
 			"::-webkit-scrollbar-thumb": {
 				background: "var(--scrollbar-thumb-color)",

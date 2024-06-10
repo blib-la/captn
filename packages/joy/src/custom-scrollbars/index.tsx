@@ -5,7 +5,7 @@ import { Scrollbars } from "react-custom-scrollbars";
 
 const StyledScrollbars = styled(Scrollbars)({
 	overflow: "hidden",
-	"&::-webkit-scrollbar": {
+	"&::-webkit-scrollbar, ::-webkit-scrollbar": {
 		width: 0,
 		height: 0,
 	},
@@ -47,11 +47,11 @@ export const CustomScrollbars = forwardRef<
 		ref={ref}
 		autoHide
 		universal
+		thumbSize={10}
 		style={{ ...style }}
 		renderThumbVertical={properties => (
 			<Box
 				{...properties}
-				className="thumb-vertical"
 				sx={theme => ({
 					bgcolor: "text.secondary",
 					zIndex: theme.zIndex.badge + 1,
